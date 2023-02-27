@@ -1,0 +1,47 @@
+<app-dashboard-landing></app-dashboard-landing>
+
+<div class="row">
+  <div class="col-sm-6 mt-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Location</h5>
+        <p class="card-text">Total Location:{{ countloc }}</p>
+        <a href="location" class="btn btn-primary">View Location</a>
+        <a href="#" class="btn btn-primary mx-3">Request Location</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 mt-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Products</h5>
+        <p class="card-text">Total Products:</p>
+        <a href="order" class="btn btn-primary">View Products</a>
+        <a href="#" class="btn btn-primary mx-3">FeedBack</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row col-xs-2 mt-4">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Reports</h5>
+        <p class="card-text">Total Reports:{{ count }}</p>
+        <a href="createreport" class="btn btn-primary">Raise a Request</a>
+        <a href="report" class="btn btn-danger mx-3">View/Delete Request</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">My Orders</h5>
+        <p class="card-text">Total Orders:{{ countpro }}</p>
+        <a href="#" class="btn btn-primary">Create Order</a>
+        <a href="#" class="btn btn-danger mx-3">View/Cancel Order</a>
+      </div>
+    </div>
+  </div>
+</div>

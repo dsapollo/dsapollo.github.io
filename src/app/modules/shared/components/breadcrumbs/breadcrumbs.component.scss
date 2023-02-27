@@ -1,0 +1,9 @@
+@import "~src/css/variables.scss";
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: $breadcrumb-divider !important;
+}
+
+a {
+  color: $primary;
+}

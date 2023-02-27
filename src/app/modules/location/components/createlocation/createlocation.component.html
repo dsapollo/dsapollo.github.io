@@ -1,0 +1,78 @@
+<div class="page-nav">
+    <app-breadcrumbs [pages]="breadcrumbs"></app-breadcrumbs>
+  </div>
+
+ <div class="container"> 
+  <div class="title">Create Location</div>
+  
+
+  <div class="content">
+    <form action="#">
+      <div class="user-details">
+        <div class="input-box">
+            <span class="details">Location</span>
+            <input type="text" placeholder="Location" required />
+          </div>
+       
+        <div class="input-box">
+          <span class="details">Location Type</span>
+          <select class="select" >
+            <option hidden></option>
+            <option >Personal</option>
+            <option >Public</option>
+            <option >Private</option>
+            
+          </select>
+        </div>
+        <div class="input-box">
+          <span class="details">Email</span>
+          <input type="text" placeholder="Enter your email" required />
+        </div>
+     
+        <div class="input-box">
+          <span class="details">Created By</span>
+          <input type="text" placeholder="Enter your name" required />
+        </div>
+        <div class="input-box">
+          <span class="details">Created On</span>
+          <input type="datetime-local" placeholder="yyyy-mm-dd" required />
+        </div>
+        
+        <div class="input-box">
+          <span class="details">Location Status </span>
+          <select class="select" >
+            <option hidden></option>
+            <option >Active</option>
+            <option >In-Active</option>
+            <option >Closed</option>
+            
+          </select>
+        </div>
+        <div class="input-box mb-4">
+          <span class="details">Address</span>
+          <input type="text" placeholder="Enter your Address" required />
+        </div>
+        <div class="input-box mb-4">
+            <span class="details">City/Town</span>
+            <input type="text" placeholder="Enter your City/Town" required />
+          </div>
+
+          <div class="input-box mb-4">
+            <span class="details">County</span>
+            <input type="text" placeholder="Country" required />
+          </div>
+          <div class="input-box mb-4">
+            <span class="details">PostCode</span>
+            <input type="number" placeholder="postcode" required />
+          </div>
+        
+      </div>
+     
+      
+      <div class="button">
+        
+        <input type="submit" class="btn btn-primary" value="Create Location"  />
+      </div>
+    </form>
+  </div>
+</div>

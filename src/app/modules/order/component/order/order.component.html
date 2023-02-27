@@ -1,0 +1,36 @@
+<app-order-landing></app-order-landing>
+<p class="fs-7 m-0">Order ( <span class="fw-bold">0</span> found)</p>
+
+<div class="scroll">
+  <div class="container">
+    <!-- <div class="header">
+        <h1>products</h1>
+    </div> -->
+    <div *ngFor="let pro of products">
+      <div class="products">
+        <div class="product">
+          <div class="image">
+            <img src="{{ pro.imageurl }}" alt="" />
+          </div>
+          <div class="namePrice">
+            <h3>{{ pro.productname }}</h3>
+            <h3>{{ pro.productcode }}</h3>
+            <span>Rs:{{ pro.price }}</span>
+          </div>
+          <p>{{ pro.description }}</p>
+
+          <div class="buy">
+            <button
+              type="button"
+              class="btn btn-primary btn-sm"
+              style="color: blue"
+              (click)="createorder()"
+            >
+              Create Order
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

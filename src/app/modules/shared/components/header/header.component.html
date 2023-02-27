@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid navbar-container px-4">
+      <div class="navbar-brand d-flex align-items-center">
+        <!-- <img
+          src="../../../../../assets/logo/spmart.png"
+          alt="SP Mart"
+          style="width: 50px; height: 50px; border-radius: 50%"
+        /> -->
+        <!-- <i class="fas fa-store"></i> -->
+        <i class="fas fa-home"></i>
+        <span class="fw-bold logo-text ms-3">Digital Store</span>
+      </div>
+      <div class="d-flex align-items-center text-light">
+        <app-app-notification></app-app-notification>
+        <app-profile *ngIf="stateService.loggedInEin"></app-profile>
+        
+      </div>
+    </div>
+    <div class="d-flex align-items-center ms-2 mt-1 mt-md-0">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collpse"
+        data-bs-target="#navbarSuppertedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        (click)="toggleSidebar()"
+      >
+        <span class="fas fa-bars"></span>
+      </button>
+      <div class="d-lg-none text-light mx-3 fs-6">Welcome User!</div>
+    </div>
+  </nav>
+  

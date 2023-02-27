@@ -1,0 +1,63 @@
+<app-myorder-landing></app-myorder-landing>
+<div *ngIf="product.length > 0; else nodata">
+  <p class="fs-7 m-0">
+    My Order ( <span class="fw-bold">{{ count }}</span> found)
+  </p>
+
+  <div class="col d-flex justify-content-end align-items-start">
+    <p class="fs-14 m-6">
+      Download Order
+      <span class="fw-bold"><i class="fas fa-download fa-1x"></i></span>
+    </p>
+  </div>
+  <div class="container">
+    <div #tableContent class="table-responsive">
+      <table class="table-1 table table-bordered table-light text-center mt-4">
+        <thead>
+          <tr class="table-primary">
+            <th>Actions</th>
+            <th>Product</th>
+            <th>Product code</th>
+            <th>Product Type</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>Created By</th>
+            <th>Created On</th>
+            <th>Quantity</th>
+            <th>Warranty</th>
+            <th>Post Code</th>
+            <th>Ship To Address</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <div class="seperated"></div>
+        <tbody>
+          <tr *ngFor="let pros of product">
+            <td>
+              <i class="fa-sharp fa-solid fa-pen-to-square"></i>
+              <i class="far fa-file-word mx-1"></i>
+            </td>
+
+            <td>{{ pros.productname }}</td>
+            <td>{{ pros.productcode }}</td>
+            <td>{{ pros.producttype }}</td>
+            <td>{{ pros.email }}</td>
+            <td>{{ pros.mobile }}</td>
+            <td>{{ pros.createdby }}</td>
+            <td>-</td>
+            <td>{{ pros.quantity }}</td>
+            <td>{{ pros.address }}</td>
+            <td>{{ pros.postcode }}</td>
+            <td>-</td>
+            <td>
+              <i class="fa-sharp fa-solid fa-trash-can"></i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<ng-template #nodata>
+  <app-no-data-found></app-no-data-found>
+</ng-template>

@@ -1,0 +1,65 @@
+<app-admin-landingpage></app-admin-landingpage>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 mt-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Location</h5>
+          <p class="card-text">Total Location:{{ countloc }}</p>
+          <a href="location" class="btn btn-primary">View All Location</a>
+          <a href="createlocation" class="btn btn-primary mx-3"
+            >Create Location</a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 mt-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Products</h5>
+          <p class="card-text">Total Products:</p>
+          <a href="#" class="btn btn-primary">View All Products</a>
+          <a href="#" class="btn btn-primary mx-3">View FeedBack</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row col-xs-2 mt-4">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Reports</h5>
+          <p class="card-text">Total Reports:{{ count }}</p>
+          <button class="btn btn-primary" (click)="viewreport()">
+            View Reports
+          </button>
+          <button class="btn btn-danger mx-3" (click)="viewreport()">
+            View/Delete Request
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">User Details</h5>
+          <p class="card-text">Total Users:</p>
+          <a href="#" class="btn btn-primary">Create User</a>
+          <a href="#" class="btn btn-danger mx-3">View/Delete User</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6 mt-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">My Orders</h5>
+          <p class="card-text">Total Orders:</p>
+          <a href="#" class="btn btn-primary">View All Order</a>
+          <a href="#" class="btn btn-danger mx-3">View/Cancel Order</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

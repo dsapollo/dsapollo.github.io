@@ -1,0 +1,36 @@
+.image-container {
+    display: inline-block;
+    border: 3px solid #ccc;
+    border-radius: 50%;
+    padding: 4px;
+  
+    .image {
+      border-radius: 50%;
+      height: 4rem;
+      width: 4rem;
+      background-color: hs1(0, 0%, 90%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  
+      p {
+        position: relative;
+        top: 7px;
+        font-size: 1.4rem;
+      }
+    }
+  }
+  
+  .sm.image-container {
+    cursor: pointer;
+    .image {
+      width: 2rem;
+      height: 2rem;
+      background: #999999;
+    }
+    p {
+      font-size: 1rem !important;
+      font-weight: bold;
+    }
+  }
+  

@@ -1,0 +1,26 @@
+<div class="breadcrumb-container d-none d-lg-block">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb align-items-center">
+        <li class="breadcrumb-item">
+          <a [routerLink]="['/']">
+            <i class="fas fa-home fs-5" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li
+          class="breadcrumb-item active fs-7"
+          *ngFor="let item of pages"
+          aria-current="page"
+        >
+          <a
+            class="text-decoration-none text-primary"
+            *ngIf="item.path"
+            [routerLink]="item.path"
+          >
+            {{ item.text }}
+          </a>
+          <span *ngIf="!item.path">{{ item.text }}</span>
+        </li>
+      </ol>
+    </nav>
+  </div>
+  

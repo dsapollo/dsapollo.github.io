@@ -1,0 +1,71 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/_breakpoints";
+
+.avatar {
+  height: 2.688rem;
+  width: 2.688rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+//avatar sizing
+.avatar {
+  .avatar-name {
+    margin-left: 0.438rem;
+  }
+}
+
+.dropdown-menu[data-bs-popper] {
+  top: 100%;
+  left: inherit;
+  right: 0;
+  margin-top: 0.6rem;
+  width: 30rem;
+  border: 1px solid #c9c9c9;
+  box-shadow: 4px 4px 5px 0px #e0e0e0;
+  background-color: #f2f2f2;
+}
+
+.dropdown-profile {
+  .seperate {
+    border-bottom: 1px solid #c1c1c1;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+
+  p {
+    margin-bottom: 0.5rem;
+  }
+  .btn-close {
+    margin-left: auto;
+  }
+}
+
+.dropdown-toggle::after {
+  content: none;
+}
+
+.role-title {
+  color: #666666;
+}
+
+@include media-breakpoint-down(md) {
+  .user-main-profile-dropdown {
+    position: initial;
+
+    .dropdown-profile.dropdown-menu {
+      width: 100vw;
+      margin-top: 0;
+    }
+  }
+}

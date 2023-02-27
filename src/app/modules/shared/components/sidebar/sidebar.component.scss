@@ -1,0 +1,154 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/_breakpoints";
+@import "~src/css/variables.scss";
+
+.sidebar {
+  flex: 0 0 $sidebar-width;
+  min-width: $sidebar-width;
+  transition: margin-left 0.35s ease-in-out, left 0.35s ease-in-out,
+    margin-right 0.35s ease-in-out, right 0.35s ease-in-out;
+  &.collapsed {
+    margin-left: -$sidebar-width-collapsed;
+  }
+}
+
+.offcanvas-backdrop {
+  z-index: 9 !important;
+  display: none;
+}
+
+.sidebar-content {
+  height: 100vh;
+}
+
+.sidebar-wrapper {
+  box-shadow: 4px 4px 5px 0px #e0e0e0;
+  padding-top: $header-md-height;
+  border-bottom-right-radius: 0.313rem;
+  height: 98%;
+  position: relative;
+  z-index: 5;
+  // max-width: auto;
+}
+
+.sidebar-toggle {
+  position: absolute;
+  color: $primary;
+  right: -0.813rem;
+  top: 50%;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.sidebar-nav {
+  list-style: none;
+  padding: 0;
+  max-height: 100%;
+  overflow-y: auto;
+
+  &-link {
+    font-weight: bold;
+    padding: 0.625rem 0rem 0.625rem 1rem;
+    display: block;
+    text-decoration: none;
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+    transition: color 75ms ease-in-out;
+    font-size: 1.125rem;
+    max-width: 16.563rem;
+
+    .icon {
+      width: 1.125rem;
+      margin-right: 1.4rem;
+      color: $primary;
+    }
+
+    span {
+      color: $text-color;
+      padding-right: 1rem;
+    }
+
+    &.active {
+      background-color: $primary;
+      color: $light;
+      border-top-right-radius: 2.875rem;
+      border-bottom-right-radius: 2.875rem;
+      span,
+      .icon {
+        color: $light;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  .collapsed {
+    .offcanvas-backdrop {
+      display: none;
+    }
+  }
+  .offcanvas-backdrop {
+    display: block;
+    opacity: 0.5;
+  }
+
+  .sidebar {
+    flex: 0 0 $sidebar-width-lg;
+    min-width: 30%;
+    position: fixed;
+    z-index: 1100;
+    margin-top: $header-md-height;
+    background-color: $primary;
+
+    &.collpsed {
+      margin-left: -$sidebar-width-lg;
+    }
+
+    .sidebar-wrapper {
+      height: 100%;
+      padding-top: 1.25rem;
+      box-shadow: none;
+      max-width: 90%;
+    }
+
+    .sidebar-toggle {
+      display: none;
+    }
+
+    .sidebar-nav {
+      &-link {
+        max-width: 100%;
+        span,
+        .icon {
+          color: $light;
+        }
+
+        &.active {
+          background-color: $light;
+
+          span,
+          .icon {
+            color: $primary;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .sidebar {
+    min-width: 80%;
+
+    &.collapsed {
+      margin-left: -36rem;
+    }
+
+    &-nav-link {
+      .icon {
+        margin-right: 1rem;
+      }
+    }
+  }
+}
