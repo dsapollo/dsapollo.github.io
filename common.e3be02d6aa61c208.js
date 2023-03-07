@@ -153,8 +153,8 @@
           }
         }
       `}).valueChanges}createSr(e){return this.apollo.mutate({mutation:t.Ps`
-        mutation ($sr: SrDto) {
-          createReport(srDto: $sr) {
+        mutation ($srDto: SrDto) {
+          createSr(srDto: $srDto ) {
             id
             createdby
             createdon
@@ -170,7 +170,7 @@
             warranty
           }
         }
-      `,variables:{sr:e}})}deleteSr(e){return this.apollo.mutate({mutation:t.Ps`
+      `,variables:{srDto:e}})}deleteSr(e){return this.apollo.mutate({mutation:t.Ps`
         mutation ($id: Int) {
           deleteSr(id: $id)
         }
