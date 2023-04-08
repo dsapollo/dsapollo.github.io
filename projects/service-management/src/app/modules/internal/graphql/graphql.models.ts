@@ -8,8 +8,9 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { MsalInterceptor, MSAL_INSTANCE, MSAL_INTERCEPTOR_CONFIG } from '@azure/msal-angular';
 import { MSALInstanceFactory, MSALInterceptorConfigFactory } from 'projects/store/src/app/modules/providers/msal/msal.module';
-import { environment } from 'projects/service-management/src/environments/environment';
+
 import { ErrorInterceptor } from 'shared-lib';
+import { environment } from 'projects/store/src/environments/environment';
 
 
 @NgModule({
