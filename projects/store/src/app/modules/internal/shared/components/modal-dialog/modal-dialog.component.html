@@ -1,0 +1,53 @@
+<ng-template #modal>
+  <div class="modal-header">
+    <h5 class="modal-title">
+      <span class="fw-bold fs-5 text-primary">
+        <!-- {{ modalConfig.modalTitle }} -->
+      </span>
+
+      <ng-content select="[modaltitle]"></ng-content>
+    </h5>
+    <button type="button" class="btn-close" (click)="close()"></button>
+  </div>
+  <div class="modal-body">
+    <ng-content select="[modalBody]"></ng-content>
+    <button
+      type="button"
+      class="btn btn-primary padding-btn"
+      (click)="dismiss()"
+      *ngIf="
+        modalConfig.showDismissButton && modalConfig.dismissButtonDanger != true
+      "
+      ngbAutofocus
+      [disabled]="modalConfig.disableDismissButton"
+    >
+      {{ modalConfig.dismissButtonLabel || "confirm" }}
+    </button>
+
+    <button
+      type="button"
+      class="btn btn-danger padding-btn"
+      (click)="dismiss()"
+      *ngIf="
+        modalConfig.showDismissButton && modalConfig.dismissButtonDanger == true
+      "
+      ngbAutoFocus
+      [disabled]="modalConfig.disableDismissButton"
+    >
+      {{ modalConfig.dismissButtonLabel || "confirm" }}
+    </button>
+
+    <button
+      type="button"
+      class="btn btn-light btn-white padding-btn"
+      (click)="close()"
+      *ngIf="
+        modalConfig.showCloseButton && modalConfig.dismissCloseDanger == true
+      "
+      ngbAutoFocus
+      [disabled]="modalConfig.disableCloseButton"
+    >
+      {{ modalConfig.closeButtonLabel || "confirm" }}
+    </button>
+  </div>
+</ng-template>

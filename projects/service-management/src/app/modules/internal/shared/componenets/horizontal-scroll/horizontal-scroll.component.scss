@@ -1,0 +1,40 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/_breakpoints";
+@import "~projects/shared-lib/src/lib/styles/store/variables.scss";
+
+
+
+        .scroll{
+            position: sticky;
+            top:78%;
+            z-index: 1;
+            width: 100%;
+        }
+
+        .scroll-left{
+            position:absolute;
+            cursor:pointer;
+            left:-13px;
+           
+            :hover{
+                color:$primary;
+                filter: opacity(100%);
+            }
+
+        }
+        .scroll-right{
+            right: 0.5rem;
+            position:absolute;
+            cursor:pointer;
+            :hover{
+                color:$primary;
+                filter: opacity(100%);
+            }
+
+        }
+        .scroll-icon{
+            color:$primary;
+            filter:opacity(50%);
+        }
+    

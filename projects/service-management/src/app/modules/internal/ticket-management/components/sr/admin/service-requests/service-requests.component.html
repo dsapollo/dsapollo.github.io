@@ -1,0 +1,61 @@
+<div class="page-conatiner">
+    <div>
+        <div class="page-conatiner-body">
+            <div class="page-tab-conatiner landing-page-tab">
+                <div class="sr-tab-dropdown">
+                    <div class="tab-title">
+                        {{tabTitle}}
+                    </div>
+                    <div>
+                        <slect class="form-select" id="active-tab-dropdown" [(ngModel)]="activeSRPage"
+                        (ngModelChange)="onChange($event)">
+                        <option *ngFor="let item of activeTabs" [value]="item.id">
+                            {{item.value}}
+                        </option>
+                    
+                    </slect>
+                    </div>
+                </div>
+
+                <ul ngbNav #nav="ngbNav"
+                [(activeId)]="activeSRPage"
+                (activeIdChange)="onChange($event)"
+                class="nav-tabs sr-tab-list"
+                >
+                <li [ngbNavItem]="1">
+                    <a ngbNav>All SR</a>
+                    <ng-template ngbNavContent>
+                        <app-all-service-request #allServiceRequest></app-all-service-request>
+                    </ng-template>
+                </li>
+                <li [ngbNavItem]="2">
+                    <a ngbNav>New SR</a>
+                    <ng-template ngbNavContent>
+                        <app-new-service-request #newSr></app-new-service-request>
+                    </ng-template>
+                </li>
+                <li [ngbNavItem]="3">
+                    <a ngbNav>In Progress</a>
+                    <ng-template ngbNavContent>
+                       <app-in-progress #inProgressSR></app-in-progress>
+                    </ng-template>
+                </li>
+                <li [ngbNavItem]="4">
+                    <a ngbNav>Create Task SR</a>
+                    <ng-template ngbNavContent>
+                       <app-create-task-sr #createTaskSR></app-create-task-sr>
+                    </ng-template>
+                </li>
+                <li [ngbNavItem]="5">
+                    <a ngbNav>Closed SR</a>
+                    <ng-template ngbNavContent>
+                        <app-closed-service-request #closedSR></app-closed-service-request>
+                    </ng-template>
+                </li>        
+            </ul>
+            <div [ngbNavOutlet]="nav" class="mt-2"></div>
+
+            </div>
+        </div>
+    </div>
+</div>

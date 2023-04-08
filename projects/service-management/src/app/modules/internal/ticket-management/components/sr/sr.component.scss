@@ -1,0 +1,19 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/_breakpoints";
+@import "~projects/shared-lib/src/lib/styles/store/variables.scss";
+
+@include media-breakpoint-only(xs){
+    .page-header .right-content button{
+        min-width: auto;
+    }
+}
+
+// .search-conatiner{
+//     background-color: $gray;
+// }
+
+.btn-primary{
+    padding-top:0.375rem;
+    padding-bottom:0.375rem;
+}

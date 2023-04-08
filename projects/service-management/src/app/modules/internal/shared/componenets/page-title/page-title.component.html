@@ -1,0 +1,12 @@
+<div class="d-flex align-items-center">
+    <img
+      src="assets/img/arrow-left.png"
+      alt="go back"
+      class="icon"
+      *ngIf="hideBackBtn"
+    />
+    <h1 class="d-inline-block fs-4 mb-0 title fw-bold">
+      <ng-content select="[title]"></ng-content>
+    </h1>
+  </div>
+  

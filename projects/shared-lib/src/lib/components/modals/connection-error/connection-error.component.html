@@ -1,0 +1,41 @@
+<div class="icon">
+  <i class="fa-solid fa-x mt-3 fa-3"(click)="modal.dismiss('cancel click')"></i>
+</div>
+
+<div class="modal-header">
+  
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-6 offset-3 text-center">
+        <img src="assets/img/oops.png" width="200" height="200">
+        <!-- <i class="fa fa-exclamation-triangle fa-2x text-color-accent"></i> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-footer d-block">
+  <div class="row">
+    <div class="col">
+      <button
+        type="button"
+        class="btn btn-info btn-lg col px-md-5"
+        (click)="refresh()"
+      >
+       Refresh
+      </button>
+    </div>
+    <div class="col  d-flex justify-content-end align-items-start">
+      <button
+        type="button"
+        ngbAutofocus
+        class="btn btn-primary btn-lg col px-md-5"
+        (click)="logout()"
+      >
+       Logout
+      </button>
+
+     
+    </div>
+  </div>
+</div>

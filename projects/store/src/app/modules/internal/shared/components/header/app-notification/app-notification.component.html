@@ -1,0 +1,94 @@
+<div
+  ngbDropdown
+  class="ms-4 me-3 notification-icon"
+  #dropDown="ngbDropdown"
+  (openChange)="handleDropdownChange()"
+>
+  <a
+    class="text-light active p-0"
+    role="button"
+    aria-expanded="false"
+    ngbDropdownToggle
+    id="notification-dropdown"
+    (click)="handleDropdownToggle()"
+  >
+    <i class="far fa-bell fs-1" aria-hidden="true"></i>
+    <span
+      class="position-absolute top-1 start-100 translate-middle badge rounded-pill bg-danger"
+      >5</span
+    >
+  </a>
+  <ul
+    ngbDropdownMenu
+    class="dropdown-menu-end p-0"
+    aria-labelledby="notification-dropdown"
+  >
+    <li>
+      <div class="px-3 py-2 notification-header">
+        <h2 class="fs-4 notification-header-title">Notification</h2>
+        <button
+          class="btn btn-sm btn-primary padding=btn notification-header-dismiss"
+          id="dismiss-all-notification"
+          (click)="dismissAllNotification()"
+          [ngClass]="{
+            disabled: !(notificationList && notificationList.length > 0)
+          }"
+        >
+          Dismiss All
+        </button>
+      </div>
+    </li>
+    <div class="notification-results">
+      <div>
+        <ng-container *ngIf="notificationList.length> 0; else noDataFound">
+          <ng-container *ngFor="let item of notificationList">
+            <li class="d-flex notification-item"
+            [ngClass]="{'notification-disabled':item.isRead}"
+            >
+            <div class="new-notification" *ngIf="!item.isRead"></div>
+            <a 
+            ngbDropdownItem
+            class="dropdown-item py-3"
+            (click)="openModal(item)">
+            <div class="notify-icon me-2">
+              <img src="assets/img/circle.png"
+              alt="circle"
+              class="img-1"/>
+              <img src="assets/img/circle-icon.png"
+              alt="circle-icon"
+              class="img-2"/>
+              <img src="assets/img/announcement-icon.png"
+              alt="announcemnt-icon"
+              class="img-3"/>
+
+            </div>
+            <span class="notifiy-text">
+              <!-- {{ item?.notificationMessage|emptySpace}} -->
+              <p>Hello Notification</p>
+            </span>
+          </a>
+          <button class="btn btn-close">
+
+          </button>
+          </li>
+          </ng-container>
+        </ng-container>
+      </div>
+    </div>
+  </ul>
+</div>
+
+<modal #notificationModal [modalConfig]="modalConfig">
+  <div *ngIf="modalData" modatBody>
+    <p>Hello nanda</p>
+  </div>
+</modal>
+
+<ng-template #noDataFound>
+  <p class="mt-4 text-center">No notifications Found</p>
+</ng-template>
+
+<modal #confirmModal [modalConfig]="confirmModalConfig">
+  <div modalBoday>Are you sure to dismiss all notification?</div>
+</modal>
+<!-- TODO add further coding when notification_svc is available -->

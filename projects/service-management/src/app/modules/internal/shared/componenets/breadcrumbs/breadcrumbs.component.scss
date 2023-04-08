@@ -1,0 +1,12 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/_breakpoints";
+@import "~projects/shared-lib/src/lib/styles/store/variables.scss";
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: $breadcrumb-divider !important;
+}
+
+a {
+  color: $primary;
+}

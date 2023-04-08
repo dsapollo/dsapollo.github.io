@@ -1,0 +1,601 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/_breakpoints";
+@import "~projects/shared-lib/src/lib/styles/theme.scss";
+@import "~projects/shared-lib/src/lib/styles/store/variables.scss";
+
+:host {
+  img {
+    width: 100px;
+  }
+
+  .popular-items {
+    border: 1px solid #a7a7a7;
+    border-radius: 10px;
+    text-align: center;
+    padding: 16px 0px;
+  }
+
+  .activities {
+    border: 1px solid #a7a7a7;
+    border-radius: 5px;
+    margin: 0 5px;
+  }
+
+  span {
+    font-weight: 500;
+  }
+
+  .item-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .item {
+    border: 1px solid black;
+    border-radius: 6px;
+    text-align: center;
+    margin: 0 2rem;
+
+    &.clickable:hover {
+      transform: scale(1.02);
+      transition: transform 0.5s;
+    }
+  }
+
+  .card-item-img-container {
+    width: 55px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+
+    .card-item-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .top-content {
+    padding: 1rem 0.5rem;
+  }
+
+  .bottom-content {
+    height: calc(230px - 130px);
+    @include themify($themes) {
+      background-color: themed("text-color-secondary");
+      // border-color: themed("text-color-secondary");
+    }
+    color: white;
+    min-height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .carousel-icon {
+    padding: 0.2rem;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include themify($themes) {
+      background-color: themed("btn-color-active");
+    }
+
+    span {
+      font-size: 36px;
+      font-weight: bold;
+      position: relative;
+    }
+  }
+
+  .app-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+  }
+
+  .app-text {
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .app-img-container {
+    height: 100%;
+    float: right;
+
+    .app-img {
+      width: 100%;
+      height: calc(100% - 45px);
+      object-fit: cover;
+
+      &.border-img {
+        position: relative;
+        top: -22.5px;
+        height: 45px;
+      }
+    }
+  }
+
+  .app-start-btn {
+    padding: 1.2rem !important;
+
+    span {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    @include themify($themes) {
+      background-color: themed("text-color-secondary");
+      border-color: themed("text-color-secondary");
+    }
+    .icon-img {
+      margin-left: 1rem;
+      width: 1rem;
+    }
+    &:hover {
+      .animation-icon {
+        transform: translateX(5px);
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+
+  .carousel-item-text {
+    position: absolute;
+    color: white;
+    top: 60px;
+    left: 150px;
+    width: 40%;
+    text-shadow: 0 0 3px #000000, 0 0 5px #000000;
+
+    ::ng-deep {
+      .tooltip {
+        position: fixed !important;
+        top: 0px !important;
+        &.show {
+          opacity: 1;
+        }
+      }
+
+      .tooltip-arrow::before {
+        border-bottom-color: #fff;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      }
+
+      .tooltip-inner {
+        z-index: 10000;
+        max-width: 525px;
+        width: 525px;
+        // left: 10px;
+        // top: -50px;
+        // position: absolute;
+        background-color: #fff;
+        color: black;
+        text-align: left;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        border-radius: 20px;
+        padding: 1rem 1.2rem;
+      }
+    }
+  }
+
+  .carousel-img {
+    height: 200px;
+    object-fit: cover;
+  }
+
+  @media screen and (max-width: 768px) {
+    .carousel-item-text {
+      font-size: 20px;
+      width: 70%;
+      left: 80px;
+      ::ng-deep {
+        .tooltip {
+          left: -45px !important;
+        }
+
+        .tooltip-inner {
+          max-width: 350px;
+          width: 350px;
+        }
+      }
+    }
+
+    .app-img-container {
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .carousel-item-text {
+      ::ng-deep {
+        .tooltip-inner {
+          max-width: 200px;
+          width: 200px;
+        }
+      }
+    }
+
+    .carousel-caption {
+      left: 40% !important;
+      top: 40% !important;
+      h2 {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 5% !important;
+  }
+
+  .carousel-indicators > button {
+    border: 1px !important;
+    width: 22px !important;
+    border-radius: 22px !important;
+    height: 0px !important;
+  }
+
+  .carousel-indicators .active {
+    @include themify($themes) {
+      background-color: themed("btn-color-active");
+    }
+  }
+
+  .carousel-btn {
+    border-radius: 20px;
+    @include themify($themes) {
+      background-color: themed("primary");
+      border-color: themed("primary");
+    }
+  }
+
+  .home-page-container,
+  .landing-page-wrapper {
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-top: -1px;
+  }
+
+  .home-page-container {
+    padding-bottom: 3.5rem;
+  }
+
+  .landing-card-link {
+    color: white;
+    font-weight: bold;
+    font-size: 1.3rem;
+    cursor: pointer;
+    text-decoration: underline;
+
+    &.no-underline {
+      text-decoration: none;
+    }
+
+    &#create-sta-link,
+    &#manage-sta-link {
+      font-size: 0.8rem;
+    }
+  }
+
+  @include themed {
+    .app-start-btn,
+    .carousel-btn {
+      color: $primary-text;
+    }
+  }
+
+  .landing-page-wrapper {
+    ::ng-deep .p-carousel-items-container {
+      height: 100%;
+    }
+
+    ::ng-deep .p-carousel-container {
+      height: 300px;
+    }
+
+    ::ng-deep {
+      .p-element {
+        position: relative;
+      }
+      .p-ripple {
+        position: absolute;
+        z-index: 1;
+        background: #fff;
+        outline: none;
+        box-shadow: none;
+      }
+
+      .p-carousel-next {
+        right: 0;
+      }
+      .pi-chevron-left {
+        background: url(/assets/img/arrow-circle-right.png);
+        transform: rotate(180deg);
+        background-repeat: no-repeat;
+        width: 30px;
+        height: 30px;
+        position: relative;
+        top: 6px;
+        left: 5px;
+      }
+
+      .pi-chevron-right {
+        background: url(/assets/img/arrow-circle-right.png);
+        background-repeat: no-repeat;
+        width: 30px;
+        height: 30px;
+        position: relative;
+        top: -6px;
+        left: -5px;
+      }
+
+      .p-carousel-indicators {
+        position: relative;
+        top: -50px;
+
+        .p-carousel-indicator {
+          button {
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            outline: none;
+            box-shadow: none;
+          }
+
+          &.p-highlight {
+            button {
+              @include themify($themes) {
+                background-color: themed("btn-color-active");
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .carousel-slide {
+      position: absolute;
+      top: 0;
+      // left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .carousel-image {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .carousel-caption {
+      position: absolute;
+      top: 42%;
+      left: 36%;
+      transform: translate(-50%, -50%);
+      text-align: left;
+      color: #fff;
+      font-weight: bolder;
+
+      h2 {
+        text-shadow: 0 0 8px #000000, 0 0 9px #000000;
+        background: rgba(0, 0, 0, 0.3);
+        padding: 15px;
+        padding-bottom: 20px;
+        border-radius: 7px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .item {
+    .bottom-content {
+      height: auto;
+      min-height: 5rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .item {
+    margin: 0 0.6rem !important;
+
+    h5 {
+      font-size: 1rem;
+    }
+
+    .bottom-content {
+      a {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .app-title {
+    font-size: 1.5rem !important;
+  }
+}
+
+@media (min-width: 576px) {
+  .items-container {
+    max-width: initial;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .item-wrapper {
+    .col-6 {
+      width: 100%;
+
+      .item {
+        .bottom-content {
+          min-height: 3rem;
+        }
+        .top-content {
+          padding: 0.5rem;
+          .card-item-img-container {
+            height: 70px;
+          }
+          h5 {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+img {
+  position: relative;
+  top: -3px;
+  }
+  
+  
+  
+  .navbar-right {
+  display: flex;
+  }
+  
+  .dropdown-content {
+  overflow-x: auto;
+  }
+  .flex-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  
+  .icon {
+  width: 50px;
+  padding-left: 0;
+  }
+  }
+  
+  .header-menu {
+  ::ng-deep {
+  .tooltip {
+  &.show {
+  opacity: 1;
+  }
+  }
+  
+  .tooltip-arrow::before {
+  border-bottom-color: #fff;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  }
+  
+  .tooltip-inner {
+  max-width: 525px;
+  width: 525px;
+  left: -30px;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  padding: 1rem 1.2rem;
+  }
+  
+  .store-location {
+  .tooltip-inner {
+  left: -60px;
+  
+  .flex-container {
+  .icon {
+  position: relative;
+  top: -6px;
+  }
+  }
+  }
+  }
+  
+  .product-alert {
+  .tooltip-inner {
+  left: -230px;
+  
+  .flex-container {
+  .icon {
+  position: relative;
+  top: -6px;
+  }
+  }
+  }
+  }
+  }
+  
+  @include themify($themes) {
+  background-color: themed("primary");
+  }
+  }
+  
+  .list {
+  padding: 7px 0;
+  padding-bottom: 0;
+  border-top: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+  color: $white;
+  height: 60px;
+  // width: 100%;
+  
+  & > .col {
+  display: flex;
+  @include themify($themes) {
+  background-color: themed("primary");
+  }
+  }
+  // background-color: red;
+  
+  .nav-hamburger {
+  display: none;
+  margin-left: auto;
+  padding: 0;
+  font: inherit;
+  border-style: none;
+  background-color: transparent;
+  cursor: pointer;
+  
+  svg rect {
+  fill: #ffffff;
+  }
+  }
+  }
+  
+  .list-item {
+  list-style-type: none;
+  display: flex;
+  padding-left: 0.5rem;
+  // align-items: center;
+  margin-bottom: 0;
+  
+  @include themify($themes) {
+  background-color: themed("primary");
+  }
+  
+  .item {
+  margin-right: 1rem;
+  }
+  .nav-link:hover,
+  .nav-link.active {
+  @include themify($themes) {
+  // background-color: themed("text-color-accent");
+  border-bottom: 7px solid themed("text-color-accent");
+  }
+  }
+  .nav-text {
+  color: $white;
+  }
+  }
+  
+  .dropdown-menu {
+  width: 100%;
+  }

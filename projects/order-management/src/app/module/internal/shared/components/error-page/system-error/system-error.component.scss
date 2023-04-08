@@ -1,0 +1,87 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/_breakpoints";
+@import "~projects/shared-lib/src/lib/styles/store/variables.scss";
+
+ .system-error-page{
+     width: 700px;
+  height: 500px;
+     display:flex;
+      align-items: center;
+    justify-content: center;
+     position: relative;
+     margin: 0 auto;
+     padding:0 30px;
+ }
+
+.system-error-bg{
+    width: 100%;
+    height: 90%;
+     object-fit:contain;
+}
+
+.error-banner{
+     position:absolute;
+    width:350px;
+    right:0px;
+   // margin-left: 25px;
+     text-align: center;
+    top:130px
+}
+
+.error-text{
+    &-title{
+        font-size:5.625rem;
+        font-weight:bold;
+        color:rgb(6, 6, 136);
+    }
+    &-sub-title {
+        font-size:1.625rem;
+        font-weight:bold;
+    }
+    &-body{
+        text-align: left;
+    }
+}
+
+@include media-breakpoint-down(lg){
+    .system-error-page{
+        width: 500px;
+    }
+
+    .error-banner{
+        width: 290px;
+        
+    
+
+    .error-text{
+        &-title{
+            font-size:4rem;
+        }
+        &-sub-title{
+            font-size:1.4rem;
+        }
+    }
+}
+}
+
+@include media-breakpoint-down(md){
+    .system-error-page{
+        width:100%;
+    }
+    .error-banner{
+        width:42vw;
+
+        .error-text{
+            &-title{
+                font-size:10vw;
+            }
+            &-sub-title {
+                font-size:3.2vw;
+            }
+            &-body{
+                display:none;
+            }
+        }
+    }
+}

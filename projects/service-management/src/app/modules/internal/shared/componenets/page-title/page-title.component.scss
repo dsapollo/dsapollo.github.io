@@ -1,0 +1,20 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/_breakpoints";
+@import "~projects/shared-lib/src/lib/styles/store/variables.scss";
+
+.icon {
+  width: 1.25rem;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+@include media-breakpoint-down(sm) {
+  .icon {
+    width: 1rem;
+  }
+
+  .title {
+    font-size: 1.1rem;
+  }
+}

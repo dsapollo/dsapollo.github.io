@@ -1,0 +1,66 @@
+<div class="page-conatiner">
+    <div>
+        <div class="page-conatiner-body">
+            <div class="page-tab-conatiner landing-page-tab">
+                <ul
+                 ngbNav
+                 #nav="ngbNav"
+                 [(activeId)]="activeAppointmentPage"
+                 (activeIdChange)="onTabChange($event)"
+                 class="nav-tabs-scheduler-nav-tabs">
+
+                 <li [ngbNavItem]="5">
+                    <a class="text-danger" ngbNavLink>Escalated SR
+                        <span class="dashboard-tooltip ms-2">
+                            <span clas="btn btn-link link btn icon-btn"
+                            [ngbTooltip]="dashboardInfoContent"
+                            [autoClose]="'outside'"
+                            triggers="click:blur"
+                            placement="bottom"
+                            #dashboardInfoToolTip="ngbTooltip"
+                            (click)="handleInfoClick($event)">
+                        <span class="fa fa-info-circle text-primary fs-6"></span>
+                        </span>
+                        </span>
+                    </a>
+                    <ng-template ngbNavContent>
+                        <app-escalated #escalated></app-escalated>
+                    </ng-template>
+                 </li>
+
+                 <li [ngbNavItem]="1">
+                    <a ngbNavLink>Unscheduled</a>
+                    <ng-template ngbNavContent>
+                        <app-unscheduled #unscheduled></app-unscheduled>
+                    </ng-template>
+                 </li>
+                 <li [ngbNavItem]="2">
+                    <a ngbNavLink>scheduled</a>
+                    <ng-template ngbNavContent>
+                        <app-scheduled #scheduled></app-scheduled>
+                    </ng-template>
+                 </li>
+                 <li [ngbNavItem]="3">
+                    <a ngbNavLink>Rescheduled</a>
+                    <ng-template ngbNavContent>
+                        <app-reschedule #rescheduled></app-reschedule>
+                    </ng-template>
+                 </li>
+                 <li [ngbNavItem]="4">
+                    <a ngbNavLink>Completed</a>
+                    <ng-template ngbNavContent>
+                        <app-completed #completedAppointment></app-completed>
+                    </ng-template>
+                 </li>
+                </ul>
+                <div [ngbNavOutlet]="nav" class="mt-2"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #dashboardInfoContent>
+    <span>
+        Due date is over
+    </span>
+</ng-template>

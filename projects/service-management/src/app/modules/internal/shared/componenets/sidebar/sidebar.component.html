@@ -1,0 +1,35 @@
+<div [ngClass]="{ collapsed: isCollapsed }">
+  <div class="offcanvas-backdrop" (click)="toggleSidebar()"></div>
+  <nav class="sidebar" [ngClass]="{ collapsed: isCollapsed }">
+    <div class="sidebar-content">
+      <div class="sidebar-wrapper">
+        <div class="sidebar-toggle" (click)="toggleSidebar()">
+          <i
+            class="fa fa-2x"
+            [ngClass]="{
+              'fa-chevron-circle-left': !isCollapsed,
+              'fa-chevron-circle-right': isCollapsed
+            }"
+            aria-hidden="true"
+          ></i>
+        </div>
+        <ul class="sidebar-nav">
+          <li  *ngFor="let route of servicemanagement.routes" class="sidebar-nav-item">
+            
+              <a
+              
+                [routerLink]="route.path"
+                routerLinkActive="active"
+                class="sidebar-nav-link"
+                (click)="handleRouteClick()"
+                *ngIf="servicemanagement.checkIsVisible(route)"
+                
+                ><i class="icon" [class]="route.icon" aria-hidden="true"></i
+                ><span>{{ route.title }}</span>
+              </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>

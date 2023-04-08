@@ -1,0 +1,46 @@
+<div class="page-nav">
+    <app-breadcrumbs [pages]="breadcrumbs"></app-breadcrumbs>
+    <div class="page-header conatiner">
+
+    </div>
+</div>
+<div class="container-fluid container">
+    <form class="reporting-form" [formGroup]="reportingForm">
+        <div class="row gx-5 mt-2">
+            <div class="col-12 col-md-12 col-lg-12 col-xl-12 form-group">
+                <label for="reportName" class="form-label required fw-bold me-2">
+                    Select Report Name
+                </label>
+                <span class="fs-8"><b>(Please Note:</b></span>
+                <span class="text-danger">
+                    Filters are case-sensitive.please ensure the values correctly for right results</span>)
+               
+            </div>
+        </div>
+        <div class="row gx-5 mt-2 mt-4">
+            <div class="col-12 col-md-6 col-lg-4 form-group">
+                <select 
+                class="form-select"
+                id="reportName"
+                (change)="selectReport($event)"
+                >
+                <option hidden *ngIf="selectedReport"></option>
+                <option hidden>Select</option>
+                <option value="location">Location</option>
+                <option value="order"  >Product</option>
+                <option value="myorder">My-Order</option>
+                <option value="srs"  >Service-Request</option>
+            </select>
+            </div>
+        </div>
+        <div class="row m-2">
+            <div class="col text-center">
+                <a href="{{downloadUrl}}" target="_blank">  <button type="button" class="btn btn-primary" *ngIf="selectedReport"  >
+                    <span class="fw-bold"> Download Report<i class="fas fa-download fa-1x"></i></span>
+                   
+                </button>
+                 </a>    
+            </div>
+        </div>
+    </form>
+</div>

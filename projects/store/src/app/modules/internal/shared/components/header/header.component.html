@@ -1,0 +1,140 @@
+
+<nav class="navbar navbar-expand-lg navbar-primary bg-white border-bottom-1">
+  <div class="conatiner-fluid">
+    <img id="logo"
+    src="assets/img/store.jpg"
+    [routerLink]="'/'"
+    class="app-logo"></div>
+<div class="collapse navbar-collapse justify-content-end aligin-items-center" id="navbarSupportConetent">
+  <!-- <form class="d-flex">
+    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+    <button class="btn btn-primary" type="button">Search</button>
+  </form> -->
+
+
+  <app-app-notification></app-app-notification>
+  <app-profile *ngIf="stateService"></app-profile>
+  
+
+  <i style="font-size: 30px;" class="fas fa-cart-plus"></i>
+  <div style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</div>
+  <span class="text-primary"><b>STORE</b></span>
+
+</div>
+</nav>
+<div class="row list">
+  <div class="col">
+    <ul class="list-item">
+      <li class="col-2" style="cursor:pointer">
+        <a class="nav-link order-management" style="color:black" aria-current="page" [routerLink]="'/order-management'">
+        <b>Order-management</b>
+        <div class="dropdown-content">
+          <a [routerLink]="'engineering-service/dashboard'" (click)="handlePropagation($event)">Order</a>
+          <a [routerLink]="'engineering-service/home'" (click)="handlePropagation($event)">My Order</a>
+        </div>
+        </a>
+
+      </li>
+      <li class="col-2" style="cursor:pointer">
+      <a class="nav-link service-management" style ="color:black" aria-current="page" [routerLink]="'/service-management/dashboard'">
+      <b>Service-management</b>
+      <div class="dropdown-content">
+        <a [routerLink]="'service-managements/product'"
+        (click)="handlePropagation($event)">Service-Management</a>
+        <a [routerLink]="'service-managements/admin'"
+        (click)="handlePropagation($event)">Product-Management</a>
+        <a [routerLink]="'service-managements/product'"
+        (click)="handlePropagation($event)">Location-Management</a>
+        
+      </div>
+      </a>
+    </li>
+    <li class="item cursor-pointer service-management">
+      <a
+        id="service-management"
+        aria-hidden="true"
+        class="nav-link"
+        aria-current="page"
+        [ngbTooltip]="servicemanagementDropdownContent"
+        [autoClose]="'outside'"
+        triggers="click:blur"
+        #servicemanagementTooltipMenu="ngbTooltip"
+        placement="bottom"
+        [ngClass]="{ active: isSrRoute() }"
+      >
+        <b class="nav-text">Service-management</b>
+    <ng-template #servicemanagementDropdownContent>
+      <div class="dropdown-content-row">
+        <a
+          routerLinkActive="active"
+          (click)="servicemanagementTooltipMenu.close()"
+          [routerLink]="''"
+          class="sidebar-nav-link col-6"
+        >
+          <div class="flex-conatiner">
+            
+            <span>Create New Sr</span>
+          </div>
+        </a>
+        <a
+          routerLinkActive="active"
+          (click)="servicemanagementTooltipMenu.close()"
+          [routerLink]="''"
+          class="sidebar-nav-link col-6"
+        >
+          <div class="flex-conatiner">
+            <span>Create New Sr</span>
+          </div>
+        </a>
+        <a
+          routerLinkActive="active"
+          (click)="servicemanagementTooltipMenu.close()"
+          [routerLink]="''"
+          class="sidebar-nav-link col-6"
+        >
+          <div class="flex-conatiner">
+            <span>Create New Sr</span>
+          </div>
+        </a>
+        <a
+          routerLinkActive="active"
+          (click)="servicemanagementTooltipMenu.close()"
+          [routerLink]="''"
+          class="sidebar-nav-link col-6"
+        >
+          <div class="flex-conatiner">
+            <span>Create New Sr</span>
+          </div>
+        </a>
+        <a
+          routerLinkActive="active"
+          (click)="servicemanagementTooltipMenu.close()"
+          [routerLink]="''"
+          class="sidebar-nav-link col-6"
+        >
+          <div class="flex-conatiner">
+            <span>Create New Sr</span>
+          </div>
+        </a>
+      </div>
+    </ng-template>
+
+    <ng-template #disabledCartMessageContent>
+      <div>
+        <!-- Cart will be enabled after the customer EIN is entered or Pre-order is
+selected. -->
+        Cart will be visible once you select items for your stores order.
+      </div>
+    </ng-template>
+
+    <ng-template #disabledLocationMessageContent>
+      <div>
+        <!-- Location specific to store location will be displayed here. -->
+        Location selected for your order collection point.
+      </div>
+    </ng-template>
+      </a>
+    </ul>
+    
+  </div>
+</div>

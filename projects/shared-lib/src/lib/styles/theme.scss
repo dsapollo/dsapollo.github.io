@@ -1,0 +1,168 @@
+$theme-map: null;
+
+$themes: (
+default: (
+font-family: "BT Curve",
+text-color-primary: #321e5b,
+text-color-secondary: #5514b4,
+icon-color: #5514b4,
+text-color-heading: #50535a,
+text-color-heading2: #5514b4,
+text-color-accent: #ff6bff,
+text-color-accent2: #e60050,
+text-color-error: #ff6bff,
+btn-color-primary: rgba(85, 20, 180, 1),
+btn-color-secondary: #6400aa,
+btn-color-active: #ff80ff,
+nav-logo-size: 60px,
+nav-logo-height: 60px,
+nav-title-text-color: #5514b4,
+nav-icon-color: black,
+nav-icon-color-active: #5514b4,
+backdrop-bg: rgba(50, 30, 91, 0.7),
+bg-gray-regular: #eeeeee,
+bg-gray-secondary: #e4e4e4,
+splash-bg: white,
+splash-text: white,
+splash-logo-size: 80px,
+splash-store-bg: transparent,
+error-border-color: rgba(218, 2, 15, 1),
+item-image-bg: #e4effa,
+tab-fsl: #ff80ff,
+tab-warehouse: #5514b4,
+tab-all: #ff5a4b,
+tab-oos: #dd412c,
+text-color-substitute: rgba(132, 112, 175, 1),
+text-color-approval: rgba(255, 207, 28, 1),
+bg-color-primary: #ffffff,
+primary-text: #fff,
+link-color: #5514b4,
+primary-light: #f3f1ff,
+primary: #5514b4,
+bg-table: #f8f9fa,
+bg-text: #f2f2f2,
+),
+bt: (
+font-family: "BT Curve",
+text-color-primary: #321e5b,
+text-color-secondary: #5514b4,
+icon-color: #5514b4,
+text-color-heading: #50535a,
+text-color-heading2: #5514b4,
+text-color-accent: #ff6bff,
+text-color-accent2: #e60050,
+text-color-error: #dd412c,
+btn-color-primary: rgba(85, 20, 180, 1),
+btn-color-secondary: #6400aa,
+btn-color-active: #ff80ff,
+nav-logo-size: 60px,
+nav-logo-height: 60px,
+nav-title-text-color: #5514b4,
+nav-icon-color: black,
+nav-icon-color-active: #5514b4,
+backdrop-bg: rgba(50, 30, 91, 0.7),
+bg-gray-regular: #d7d7d7,
+bg-gray-secondary: #e4e4e4,
+splash-bg: url("/assets/splash.jpg"),
+splash-text: white,
+splash-logo-size: 80px,
+splash-store-bg: transparent,
+error-border-color: rgba(218, 2, 15, 1),
+item-image-bg: #e4effa,
+tab-fsl: #ff80ff,
+tab-warehouse: #5514b4,
+tab-all: #ff5a4b,
+tab-oos: #dd412c,
+text-color-substitute: rgba(132, 112, 175, 1),
+text-color-approval: rgba(255, 207, 28, 1),
+bg-color-primary: #ffffff,
+primary-text: #fff,
+link-color: #5514b4,
+primary-light: #f3f1ff,
+primary: #5514b4,
+bg-table: #f8f9fa,
+bg-text: #f2f2f2,
+),
+openreach: (
+font-family: Openreach,
+text-color-primary: #142032,
+text-color-secondary: #43b072,
+icon-color: #50535a,
+text-color-heading: #333333,
+text-color-heading2: #333333,
+text-color-error: #dd412c,
+text-color-accent: #5488c7,
+text-color-accent2: #0a9c82,
+btn-color-primary: #0a9c82,
+btn-color-secondary: #0a9c82,
+btn-color-active: #5488c7,
+nav-logo-size: 80px,
+nav-logo-height: auto,
+nav-title-text-color: #073b4c,
+nav-icon-color: #725aa4,
+nav-icon-color-active: #009982,
+backdrop-bg: rgba(194, 193, 196, 0.7),
+bg-gray-regular: #d7d7d7,
+bg-gray-secondary: #e4e4e4,
+splash-bg: white,
+splash-text: #725aa4,
+splash-logo-size: 48px,
+splash-store-bg: #725aa4,
+error-border-color: rgba(218, 2, 15, 1),
+item-image-bg: #99d6cd,
+tab-fsl: #715aa3,
+tab-warehouse: #0a9c82,
+tab-all: #dd771d,
+tab-oos: #dd412c,
+text-color-substitute: rgba(132, 112, 175, 1),
+text-color-approval: rgba(255, 207, 28, 1),
+bg-color-primary: #e3e4e6,
+primary-text: #fff,
+link-color: #5488c7,
+primary-light: #e3e4e6,
+primary: #142032,
+bg-table: #f8f9fa,
+bg-text: #f2f2f2,
+),
+);
+
+@mixin themify($themes) {
+@each $theme, $map in $themes {
+.theme-#{$theme} & {
+$theme-map: () !global;
+@each $key, $submap in $map {
+$value: map-get(map-get($themes, $theme), "#{$key}");
+$theme-map: map-merge(
+$theme-map,
+(
+$key: $value,
+)
+) !global;
+}
+@content;
+$theme-map: null !global;
+}
+}
+}
+
+@function themed($key) {
+@return map-get($theme-map, $key);
+}
+
+@mixin themed {
+@include themify($themes) {
+$primary: themed("text-color-secondary") !global;
+$primary-light: themed("primary-light") !global;
+$primary-text: themed("primary-text") !global;
+$secondary: themed("primary") !global;
+$link-color: themed("link-color") !global;
+$bg-color-primary: themed("bg-color-primary") !global;
+$text-color-primary: themed("text-color-primary") !global;
+$text-color-substitute: themed("text-color-substitute") !global;
+$backdrop-bg: themed("backdrop-bg") !global;
+$bg-table: themed("bg-table") !global;
+$bg-text: themed("bg-text") !global;
+$icon-color: themed("icon-color") !global;
+@content;
+}
+}

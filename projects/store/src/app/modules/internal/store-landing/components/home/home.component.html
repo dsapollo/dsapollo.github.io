@@ -1,0 +1,258 @@
+
+<div
+  class="container home-page-container"
+  remainingHeight
+  *ngIf="storeLandingService.showLandingInfo"
+>
+  <div class="row px-3 px-md-0 mt-4 mt-md-5">
+    <div class="col-lg-5 col-12 col-md-6" style="margin: auto">
+      <h2 class="app-title" *ngIf="carouselDetailsLP1['LP_1_1']">
+        {{ carouselDetailsLP1["LP_1_1"].desc }}
+      </h2>
+      <p class="app-text" *ngIf="carouselDetailsLP1['LP_1_2']">
+        {{ carouselDetailsLP1["LP_1_2"].desc }}
+      </p>
+      <button
+        type="button"
+        class="btn btn-primary app-start-btn"
+        *ngIf="carouselDetailsLP1['LP_1_4']"
+        (click)="onClick()"
+      >
+        <span> {{ carouselDetailsLP1["LP_1_4"].desc }}</span>
+        <img
+          src="../../../../../../assets/img/right-arrow.png"
+          alt=""
+          class="icon-img animation-icon"
+        />
+      </button>
+    </div>
+    <div
+      class="col-12 col-lg-6 col-md-6 order-first order-md-last mb-4 mb-md-5 mb-md-0"
+    >
+      <div class="app-img-container" *ngIf="carouselDetailsLP1['LP_1_3']">
+        <img
+          src="{{ carouselDetailsLP1['LP_1_3'].imageUrl }}"
+          class="app-img"
+        />
+        <!-- <img
+          *ngIf="themeService.currentTheme === 'theme-bt'"
+          src="../../../../../../assets/img/icons/bt-img-border.svg"
+          class="app-img border-img"
+        /> -->
+      </div>
+    </div>
+  </div>
+</div>
+<div
+  class="landing-page-wrapper"
+  *ngIf="!storeLandingService.showLandingInfo"
+  remainingHeight
+>
+  <div
+    id="carouselExampleIndicators"
+    class="carousel slide"
+    data-bs-ride="carousel"
+  >
+    <div class="carousel-indicators">
+      <button
+        type="button"
+        class="active"
+        *ngFor="let carouselDetail of carouselDetailsLP2; let i = index"
+        data-bs-target="#carouselExampleIndicators"
+        [attr.data-bs-slide-to]="i"
+        [ngClass]="{ active: i == 0 }"
+        aria-label="'Slide-' + i + 1"
+      ></button>
+    </div>
+
+    <div class="carousel-inner">
+      <div
+        class="carousel-item active"
+        *ngFor="let carouselDetail of carouselDetailsLP2; let i = index"
+        [ngClass]="{ active: i == 0 }"
+      >
+        <img
+          src="{{ carouselDetail.imageUrl }}"
+          class="d-block carousel-img w-100"
+          alt="..."
+        />
+        <h2 class="carousel-item-text">
+          <!-- Now you can easily access EsiTest, nCal in Test and Calibrate!!! -->
+          <strong>{{ carouselDetail.desc }}</strong
+          ><a
+            type="text"
+            class="btn btn-primary carousel-btn ms-3"
+            target="_blank"
+            href="{{ carouselDetail.imageUrl }}"
+          >
+            Know more
+          </a>
+        </h2>
+      </div>
+      <!-- <div class="carousel-item">
+        <h2 class="carousel-item-text">
+          Now you can easily access EsiTest, nCal in Test and Calibrate!!!
+        </h2>
+        <img
+          src="../../../../../../assets/landing_page_image.png"
+          class="d-block w-100"
+          alt="..."
+          style="height: 304px"
+        />
+      </div> -->
+    </div>
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-icon">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="next"
+    >
+      <span class="carousel-icon">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <div class="container mb-5 items-container">
+    <div class="row item-wrapper gy-5">
+      <div
+        class="col-lg-4 col-md-6 col-6 p-0 cursor-pointer"
+        *ngIf="isDigitalstoreUser"
+        [routerLink]="'/service-managements/report'"
+      >
+        <div class="item clickable">
+          <div class="top-content">
+            <div class="card-item-img-container">
+              <img
+                src="../../../../../../assets/img/unboxing.png"
+                alt=""
+                width="30"
+                height="40"
+                class="icon-img animation-icon"
+              />
+              <!-- <store-order-icon></store-order-icon> -->
+            </div>
+            <h5 class="p-2 text-truncate" title="Order Management">
+              <strong>Order Management</strong>
+            </h5>
+          </div>
+          <div class="bottom-content">
+            <a class="p-2 m-0 landing-card-link no-underline"> MyStores </a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-lg-4 col-md-6 col-6 p-0 cursor-pointer"
+        *ngIf="isDigitalstoreUser"
+        [routerLink]="'/service-managements/report'"
+      >
+        <div class="item clickable">
+          <div class="top-content">
+            <div class="card-item-img-container">
+              <!-- <service-request-icon></service-request-icon> -->
+            </div>
+            <h5 class="p-2 text-truncate" title="Service-management">
+              <strong>Service-management</strong>
+            </h5>
+          </div>
+          <div class="bottom-content">
+            <a class="p-2 m-0 landing-card-link no-underline"> Sr </a>
+          </div>
+        </div>
+      </div>
+      <div
+      class="col-lg-4 col-md-6 col-6 p-0 cursor-pointer"
+      *ngIf="isDigitalstoreUser"
+      [routerLink]="'/service-managements/admin'"
+    >
+      <div class="item clickable">
+        <div class="top-content">
+          <div class="card-item-img-container">
+            <!-- <service-request-icon></service-request-icon> -->
+          </div>
+          <h5 class="p-2 text-truncate" title="Engineering Services">
+            <strong>Engineering Services</strong>
+          </h5>
+        </div>
+        <div class="bottom-content">
+          <a class="p-2 m-0 landing-card-link no-underline"> EsiTest </a>
+        </div>
+      </div>
+    </div>
+      <div class="col-lg-4 col-md-6 col-6 p-0">
+        <div class="item">
+          <div class="top-content">
+            <div class="card-item-img-container">
+              <!-- <store-location-icon></store-location-icon> -->
+            </div>
+            <h5 class="p-2 text-truncate" title="Stores Delivery Location">
+              <strong>Service-management</strong>
+            </h5>
+          </div>
+          <div class="bottom-content">
+            <a
+              class="p-2 m-0 landing-card-link"
+              id="manage-sta-link"
+              [routerLink]="'/escap-apps/sta/create/staLink'"
+              >Manage the STAs you can link to</a
+            >
+            <a
+              class="p-2 m-0 landing-card-link"
+              id="create-sta-link"
+              [routerLink]="'/escap-apps/sta/create'"
+              >Create new STA delivery location</a
+            >
+          </div>
+        </div>
+      </div>
+      <!-- <div class="col-lg-4 col-md-6 col-6 p-0" *ngIf="isEsiTestUser()">
+        <div class="item">
+          <div class="top-content">
+            <div class="card-item-img-container">
+              <test-calibrate-icon></test-calibrate-icon>
+            </div>
+            <h5 class="p-2"><strong>Test & Calibrate</strong></h5>
+          </div>
+          <div class="bottom-content">
+            <a
+              class="p-2 m-0 landing-card-link"
+              [routerLink]="'/engineering-service/dashboard'"
+            >
+              EsiTest
+            </a>
+          </div>
+        </div>
+      </div> -->
+      <div
+        class="col-lg-4 col-md-6 col-6 p-0 cursor-pointer"
+        [routerLink]="'/escap-apps/product-alert/create'"
+      >
+        <div class="item clickable">
+          <div class="top-content">
+            <div class="card-item-img-container">
+              <!-- <product-alert-icon></product-alert-icon> -->
+            </div>
+            <h5 class="p-2 text-truncate" title="Product Alert">
+              <strong>Product Alert</strong>
+            </h5>
+          </div>
+          <div class="bottom-content">
+            <a class="p-2 m-0 landing-card-link no-underline">Product Alert</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

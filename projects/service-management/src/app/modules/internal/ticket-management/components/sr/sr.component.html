@@ -1,0 +1,63 @@
+<div class="page-nav">
+    <app-breadcrumbs [pages]="breadcrumbs"></app-breadcrumbs>
+    <!-- <app-breadcrumbs[pages]="breadcrumbs"></app-breadcrumbs> -->
+    <div class="page-header conatiner">
+      <div  class="right-content">
+        <button id="raise-sr-btn" class="btn btn-primary px-4 edit-btn" title="Raise New Ticket">
+            <span class="d-none d-sm-block fw-bold">Raise New Ticket</span>
+        </button>
+      </div>
+    </div>
+    <div class="conatiner fluid" id="main-body">
+  </div>
+  <app-searchbox placeholder="Search By Id or Name"></app-searchbox>
+   
+    <ng-template #containerHeader>
+       
+        <ng-container>
+         
+            
+        </ng-container>
+
+        <ng-container *ngIf="activeSrTab ===2 && isAdmin">
+          <div class="Search-container">
+            <div class="d-flex align-items-center">
+              <label class="me-2">Scheduler</label>
+              <ng-select 
+              *ngIf="showSchedulerDropdown"
+              class="Search-select-box custom-select-dropdown non-editable"
+              id="scheduler-dropdown"
+              [items]="schedulers"
+              bindLabel="fullName"
+              bindValue="UIN"
+              (change)="handleSchedulerChange($event)"
+              [clearable]="false"
+              #schedulerDropdown
+              (close)="schedulerDropdown.blur()"
+              placeholder="Select Scheduler"
+              (clear)="handleSchedulerClear()">
+            </ng-select>
+            </div>
+
+            <div class="d-flex align-items-center tester-dropdown-container">
+              <label class="me-2">Tester</label>
+              <ng-select 
+              *ngIf="showTesterDropdown"
+              class="Search-select-box custom-select-dropdown non-editable"
+              id="scheduler-dropdown"
+              [items]="testers"
+              bindLabel="fullName"
+              bindValue="UIN"
+              [clearable]="false"
+              #schedulerDropdown
+              (close)="schedulerDropdown.blur()"
+              placeholder="Select Scheduler"
+              (clear)="handleSchedulerClear()">
+            </ng-select>
+            </div>
+          </div>
+        </ng-container>
+    </ng-template>
+   <app-admin></app-admin>
+   
+</div>

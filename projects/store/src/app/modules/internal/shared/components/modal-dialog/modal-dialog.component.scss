@@ -1,0 +1,24 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/_breakpoints";
+//@import "~projects/store/src/css/variables.scss";
+
+
+.modal-boday{
+    padding-top:0;
+    margin-top:0.8rem;
+}
+
+.modal-header {
+    border-bottom:none;
+}
+
+.modal-footer{
+    border-top:none;
+    padding-top:1rem;
+    padding-bottom:1rem;
+}
+
+.btn-danger{
+    color:aliceblue
+}

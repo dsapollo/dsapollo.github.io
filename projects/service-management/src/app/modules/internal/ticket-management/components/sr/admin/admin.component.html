@@ -1,0 +1,33 @@
+<ng-container>
+  <div class="container-header">
+    <div class="page-container mt-2">
+      <div>
+        <div class="page-conatiner-body">
+          <div class="page-tab-conatiner sr-tab mt-2">
+            <ul
+              ngbNav
+              #nav="ngbNav"
+              [(activeId)]="activePage"
+              class="nav-tabs"
+              (activeIdChange)="onChange($event)"
+            >
+              <li [ngbNavItem]="2">
+                <a ngbNavLink>Apponitments</a>
+                <ng-template ngbNavContent>
+                  <app-appointments #appointment></app-appointments>
+                </ng-template>
+              </li>
+              <li [ngbNavItem]="1">
+                <a ngbNavLink>service-requests</a>
+                <ng-template ngbNavContent>
+                  <app-service-requests #serviceRequest></app-service-requests>
+                </ng-template>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div [ngbNavOutlet]="nav"></div>
+</ng-container>

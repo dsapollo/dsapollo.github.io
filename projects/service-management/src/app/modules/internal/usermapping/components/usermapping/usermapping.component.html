@@ -1,0 +1,90 @@
+<!-- <div class="page-nav">
+  <app-breadcrumbs [pages]="breadcrumbs"></app-breadcrumbs>
+  <div class="page-header conatiner">
+    <app-page-title>
+      <span title>User Mapping</span>
+    </app-page-title>
+    <div class="right-content justify-center aligin-items-center">
+      <input
+        type="checkbox"
+        class="form-check-input-cursor-pointer mx-2 mt-0"
+        [checked]="checked"
+        id="not-assigned-toogle"
+        (change)="toggleNotAssigned($event)"
+      />
+      <label for="not-assigned-toogle" class="cursor-pointer"
+        >Not Assigned</label
+      >
+    </div>
+  </div>
+</div>
+
+<div class="container page-container" id="main-body">
+  <div class="container-header">
+    <div class="page-tab-container user-page-tab">
+      <ul
+        ngbNav
+        #nav="ngbNav"
+        [(activeId)]="activeId"
+        (activeIdChange)="handleChange($event)"
+        class="nav-tabs"
+      >
+        <li [ngbNavItem]="1">
+          <a ngbnavLink>Tester-Mapping</a>
+          <ng-template ngbNavContent>
+            <app-tester-mapping #testerSelected></app-tester-mapping>
+          </ng-template>
+        </li>
+        <li [ngbNavItem]="2">
+          <a ngbnavLink>Scheduler-Mapping</a>
+          <ng-template ngbNavContent>
+            <app-scheduler-mapping #schedulerSelected></app-scheduler-mapping>
+           
+          </ng-template>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div [ngbNavOutlet]="nav"></div>
+</div> -->
+
+<div class="page-nav">
+  <app-breadcrumbs [pages]="breadcrumbs"></app-breadcrumbs>
+  <div class="page-header container">
+      <!-- <app-page-title><span>User Mapping</span></app-page-title> -->
+
+  </div>
+</div>
+
+<div class="container page-container" id="main-body">
+  <div class="container-header">
+      <div class="page-container-body">
+          <div class="page-tab-container landing-page-tab">
+              <ul 
+              ngbNav
+              #nav="ngbNav"
+              [(activeId)]="activeId"
+              (activeIdChange)="handleChange($event)"
+              class="nav-tabs"
+              >
+              <li [ngbNavItem]="1">
+                  <a ngbnavLink (click)="testermapping()">Tetser-Mapping</a>
+                  <ng-template ngbNavContent>
+                    
+                      <app-tester-mapping></app-tester-mapping>
+                  </ng-template>
+              </li>
+              <li [ngbNavItem]="2" class="mx-4">
+                  <a ngbnavLink (click)="schedulermapping()">scheduler-mapping</a>
+              
+                  <ng-template ngbNavContent>
+                    <app-scheduler-mapping #schedulerselected></app-scheduler-mapping>
+                  </ng-template>
+              </li>
+
+              </ul>
+          </div>
+      </div>
+  </div>
+  <div [ngbNavOutlet]="nav"></div>
+</div>

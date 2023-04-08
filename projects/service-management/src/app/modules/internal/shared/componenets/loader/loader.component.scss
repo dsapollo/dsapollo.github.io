@@ -1,0 +1,44 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/_breakpoints";
+@import "~projects/shared-lib/src/lib/styles/store/variables.scss";
+
+
+.loader{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    height:100%;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    z-index:10000;
+    background:rgba(1, 12, 13, 0.62);
+    height:100%;
+
+
+    img{
+        max-height: 12rem;
+        // margin-left: $sidebar-width;
+        margin-right: -30px;
+    }
+
+    &.collapsed{
+        img{
+            margin-left:0;
+        }
+    }
+}
+
+// @include media-breakpont-down(lg){
+//     .loader{
+//         img{
+//             margin-left:0;
+//         }
+//     }
+// }

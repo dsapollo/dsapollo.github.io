@@ -1,0 +1,47 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/_breakpoints";
+@import "~projects/shared-lib/src/lib/styles/store/variables.scss";
+
+.nav-tabs{
+    position: sticky;
+    top: 8.125rem;
+    width:100%;
+    background: white;
+    z-index:2;
+
+    background-color: antiquewhite;
+}
+
+.scheduler-nav-tabs{
+    top:12.125rem;
+}
+
+
+@include media-breakpoint-down(md){
+    .nav-tabs{
+        top:7.188rem;
+    }
+}
+
+.dashboard-tooltip{
+    ::ng-deep .tooltip{
+        position: fixed!important;
+        inset:initial !important;
+        transform:translated3d(-5px,0px) !important
+    }
+
+    .page-tab-container .nav-tabs .nav-link.active{
+        border-bottom: 3px solid;
+        color: black;
+        font-weight: bold;
+    }
+
+    .page-tab-container .nav-tabs .nav-link{
+        border:none;
+        background: inherit !important;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        width: max-content;
+    }
+}
