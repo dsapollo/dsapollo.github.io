@@ -3,8 +3,8 @@ import {remoteFileName} from '../../../remote-file';
 export const environment = {
   production: true,
 
-  serviceManagementRemoteUrl:`https://dsapollo.github.io/${remoteFileName}`,
-  OrderManagementRemoteUrl:`https://dsapollo.github.io/${remoteFileName}`,
+  serviceManagementRemoteUrl:`http://localhost:4400/${remoteFileName}`,
+  OrderManagementRemoteUrl:`http://localhost:4300/${remoteFileName}`,
 
   dstoreApiUrl: 'https://graphql-internal.onrender.com/graphql',
 

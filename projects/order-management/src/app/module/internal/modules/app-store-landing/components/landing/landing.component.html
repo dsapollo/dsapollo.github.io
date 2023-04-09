@@ -1,1 +1,166 @@
-<p>landing works!</p>
+
+<div class="shop-kart">
+  <section class="topProductNavbar">
+    <div class="topProductNavbar_Nav">
+      <div class="dropdown">
+        <span>
+    <a (click)="filter('')">
+      <img
+        src="https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100"
+      /></a></span>
+      <p>All Products</p>
+      
+        <div class="dropdown-content">
+        <p>Hello World!</p>
+        </div>
+      
+      </div>
+    </div>
+
+    <div class="topProductNavbar_Nav">
+      <div class="dropdown">
+      <span>
+        <a (click)="filter('grocery')">
+      <img
+        src="https://rukminim1.flixcart.com/flap/128/128/image/29327f40e9c4d26b.png?q=100"
+      /></a></span>
+      <p>Grocery</p>
+      <div class="dropdown-content">
+        <p>Hello World!</p>
+        </div>
+    </div>
+  </div>
+
+    <div class="topProductNavbar_Nav">
+      <div class="dropdown">
+        <span>
+          <a (click)="filter('mobile')">
+      <img
+        src="https://rukminim1.flixcart.com/flap/128/128/image/22fddf3c7da4c4f4.png?q=100"
+      /></a></span>
+      <p>Mobile</p>
+      <div class="dropdown-content">
+        <p>Hello World!</p>
+        </div>
+    </div>
+    </div>
+
+    <div class="topProductNavbar_Nav">
+      <div class="dropdown">
+        <span>
+          <a (click)="filter('fashion')">
+      <img
+        src="https://rukminim1.flixcart.com/fk-p-flap/128/128/image/0d75b34f7d8fbcb3.png?q=100"
+      /></a></span>
+      <p>Fashion</p>
+      <div class="dropdown-content">
+        <p>Hello World!</p>
+        </div>
+    </div>
+    </div>
+
+    <div class="topProductNavbar_Nav">
+      <div class="dropdown">
+      <span>
+        <a (click)="filter('electronics')">
+          <img src="https://rukminim1.flixcart.com/flap/128/128/image/69c6589653afdb9a.png?q=100" alt="">
+          <h6>Electronics</h6>
+      </a></span>
+      <div class="dropdown-content">
+        <p>Hello World!</p>
+        </div>
+    </div>
+    </div>
+
+    <div class="topProductNavbar_Nav">
+      <div class="dropdown">
+        <span>
+          <a (click)="filter('home')">
+      <img
+        src="https://rukminim1.flixcart.com/flap/128/128/image/ab7e2b022a4587dd.jpg?q=100"
+      /></a></span>
+      <p>Home</p>
+      <div class="dropdown-content">
+        <p>Hello World!</p>
+        </div>
+    </div>
+    </div>
+
+    <div class="topProductNavbar_Nav">
+      <div class="dropdown">
+      <span>
+        <a (click)="filter('appliances')">
+      <img
+        src="https://rukminim1.flixcart.com/flap/128/128/image/0ff199d1bd27eb98.png?q=100"
+      /></a></span>
+      <p>Appliances</p>
+      <div class="dropdown-content">
+        <p>Hello World!</p>
+        </div>
+    </div>
+    </div>
+
+    <div class="topProductNavbar_Nav">
+      <div class="dropdown">
+        <span>
+          <a (click)="filter('travel')">
+      <img
+        src="https://rukminim1.flixcart.com/flap/128/128/image/71050627a56b4693.png?q=100"
+      /></a></span>
+      <p>Travel</p>
+      <div class="dropdown-content">
+        <p>Hello World!</p>
+        </div>
+    </div>
+    </div>
+
+    <div class="topProductNavbar_Nav">
+      <div class="dropdown">
+      <span>
+        <a (click)="filter('beauty,toys')">
+      <img
+        src="https://rukminim1.flixcart.com/flap/128/128/image/dff3f7adcf3a90c6.png?q=100"
+      /></a></span>
+      <p>Beauty,Toys</p>
+      <div class="dropdown-content">
+        <p>Hello World!</p>
+        </div>
+    </div>
+    </div>
+
+    <div class="topProductNavbar_Nav">
+      <div class="dropdown">
+      <span>
+      <img
+        src="https://icons-for-free.com/iconfiles/png/512/list+view+menu+menu+select+more+options+icon-1320085926232917867.png"
+      /></span>
+      <p>More</p>
+      <div class="dropdown-content">
+        <p>Hello World!</p>
+        <p>Hello World!</p>
+        <p>Hello World!</p>
+        <p>Hello World!</p>
+      </div>
+    </div>
+  </div>
+ </section>
+
+ 
+  
+  <div class="container">
+    <div class="row">
+        <ng-container *ngFor="let item of products 'title'">
+            <div class="card col-md-3">
+                <img src="{{item.imageUrl}}" alt="">
+                <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.productname}}</h5>
+                <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
+                <p><strong>Price:</strong> ${{item.price}}</p>
+                <button class="btn btn-primary" (click)=addtocart(item)>Add to cart</button>
+            </div>
+        </ng-container>
+
+    </div>
+</div>
+
+
+</div>
