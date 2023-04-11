@@ -130,22 +130,24 @@
       <div
         class="col-lg-4 col-md-6 col-6 p-0 cursor-pointer"
         *ngIf="isDigitalstoreUser"
-        [routerLink]="'/service-managements/report'"
+        [routerLink]="'/order-management/dashboard'"
       >
         <div class="item clickable">
           <div class="top-content">
             <div class="card-item-img-container">
               <img
-                src="../../../../../../assets/img/unboxing.png"
+                src="../../../../../../assets/img/product.png"
                 alt=""
-                width="30"
-                height="40"
+                width="50"
+                height="50"
                 class="icon-img animation-icon"
               />
               <!-- <store-order-icon></store-order-icon> -->
             </div>
             <h5 class="p-2 text-truncate" title="Order Management">
-              <strong>Order Management</strong>
+              <button class="shadow__btn">
+                uiverse
+            </button>
             </h5>
           </div>
           <div class="bottom-content">
@@ -177,81 +179,7 @@
       *ngIf="isDigitalstoreUser"
       [routerLink]="'/service-managements/admin'"
     >
-      <div class="item clickable">
-        <div class="top-content">
-          <div class="card-item-img-container">
-            <!-- <service-request-icon></service-request-icon> -->
-          </div>
-          <h5 class="p-2 text-truncate" title="Engineering Services">
-            <strong>Engineering Services</strong>
-          </h5>
-        </div>
-        <div class="bottom-content">
-          <a class="p-2 m-0 landing-card-link no-underline"> EsiTest </a>
-        </div>
-      </div>
-    </div>
-      <div class="col-lg-4 col-md-6 col-6 p-0">
-        <div class="item">
-          <div class="top-content">
-            <div class="card-item-img-container">
-              <!-- <store-location-icon></store-location-icon> -->
-            </div>
-            <h5 class="p-2 text-truncate" title="Stores Delivery Location">
-              <strong>Service-management</strong>
-            </h5>
-          </div>
-          <div class="bottom-content">
-            <a
-              class="p-2 m-0 landing-card-link"
-              id="manage-sta-link"
-              [routerLink]="'/escap-apps/sta/create/staLink'"
-              >Manage the STAs you can link to</a
-            >
-            <a
-              class="p-2 m-0 landing-card-link"
-              id="create-sta-link"
-              [routerLink]="'/escap-apps/sta/create'"
-              >Create new STA delivery location</a
-            >
-          </div>
-        </div>
-      </div>
-      <!-- <div class="col-lg-4 col-md-6 col-6 p-0" *ngIf="isEsiTestUser()">
-        <div class="item">
-          <div class="top-content">
-            <div class="card-item-img-container">
-              <test-calibrate-icon></test-calibrate-icon>
-            </div>
-            <h5 class="p-2"><strong>Test & Calibrate</strong></h5>
-          </div>
-          <div class="bottom-content">
-            <a
-              class="p-2 m-0 landing-card-link"
-              [routerLink]="'/engineering-service/dashboard'"
-            >
-              EsiTest
-            </a>
-          </div>
-        </div>
-      </div> -->
-      <div
-        class="col-lg-4 col-md-6 col-6 p-0 cursor-pointer"
-        [routerLink]="'/escap-apps/product-alert/create'"
-      >
-        <div class="item clickable">
-          <div class="top-content">
-            <div class="card-item-img-container">
-              <!-- <product-alert-icon></product-alert-icon> -->
-            </div>
-            <h5 class="p-2 text-truncate" title="Product Alert">
-              <strong>Product Alert</strong>
-            </h5>
-          </div>
-          <div class="bottom-content">
-            <a class="p-2 m-0 landing-card-link no-underline">Product Alert</a>
-          </div>
-        </div>
+      
       </div>
     </div>
   </div>

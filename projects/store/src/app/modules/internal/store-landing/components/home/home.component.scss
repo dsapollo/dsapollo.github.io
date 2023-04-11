@@ -150,7 +150,7 @@
   .carousel-item-text {
     position: absolute;
     color: white;
-    top: 60px;
+    top: 50px;
     left: 150px;
     width: 40%;
     text-shadow: 0 0 3px #000000, 0 0 5px #000000;
@@ -187,7 +187,7 @@
   }
 
   .carousel-img {
-    height: 200px;
+    height: 250px;
     object-fit: cover;
   }
 
@@ -506,7 +506,7 @@ img {
   padding: 1rem 1.2rem;
   }
   
-  .store-location {
+  .order-management {
   .tooltip-inner {
   left: -60px;
   
@@ -519,7 +519,7 @@ img {
   }
   }
   
-  .product-alert {
+  .service-management {
   .tooltip-inner {
   left: -230px;
   
@@ -598,4 +598,31 @@ img {
   
   .dropdown-menu {
   width: 100%;
+  }
+
+
+
+  .shadow__btn {
+    padding: 10px 20px;
+    border: none;
+    font-size: 17px;
+    color: #fff;
+    border-radius: 7px;
+    letter-spacing: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.5s;
+    transition-property: box-shadow;
+  }
+  
+  .shadow__btn {
+    background: rgb(0,140,255);
+    box-shadow: 0 0 25px rgb(0,140,255);
+  }
+  
+  .shadow__btn:hover {
+    box-shadow: 0 0 5px rgb(0,140,255),
+                0 0 25px rgb(0,140,255),
+                0 0 50px rgb(0,140,255),
+                0 0 100px rgb(0,140,255);
   }

@@ -7,6 +7,8 @@ import {
 } from 'projects/shared-lib/src/lib/utils/constants';
 import { StateService } from '../../services/state.services';
 import { StoreLandingService } from '../../services/store-landing.service';
+import { ServiceManagementLinkService } from 'projects/shared-lib/src/lib/services/service-management-link.service';
+import { ThemeService } from 'shared-lib';
 
 @Component({
   selector: 'app-header',
@@ -31,6 +33,7 @@ isReporting:any;
 OrderManagementBasePath: any|string;
 favouritesService: any;
 isAdmin:any=true;
+isPreOrder:any=true;
 
 
 authService: any;
@@ -49,6 +52,10 @@ throw new Error('Method not implemented.');
     
   };
 
+  loggedInUser(){
+
+  }
+
   toggleMobileMenu() {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
   }
@@ -60,7 +67,8 @@ throw new Error('Method not implemented.');
   constructor(
     public stateService: StateService,
     private router: Router,
-   
+    public srLink:ServiceManagementLinkService,
+ public themeservice:ThemeService,
     public storelandingService: StoreLandingService,
     @Inject('environment') environment: Environment
   ) {
@@ -93,6 +101,10 @@ throw new Error('Method not implemented.');
 
   toggleSidebar() {
     this.stateService.toggleSidebar();
+  }
+
+  isEsiTestUser(){
+
   }
 
   ngOnInit(): void {
