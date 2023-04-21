@@ -1,0 +1,15 @@
+<svg id="Group_50" data-name="Group 50" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="76.619" height="36.056" viewBox="0 0 76.619 36.056">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#5514b4"/>
+      <stop offset="1" stop-color="#cecae5"/>
+    </linearGradient>
+  </defs>
+  <rect id="Rectangle_566" data-name="Rectangle 566" width="9.014" height="27.042" transform="translate(0 9.014)" fill="url(#linear-gradient)"/>
+  <rect id="Rectangle_566-2" data-name="Rectangle 566" width="9.014" height="14.648" transform="translate(11.268 21.408)" fill="url(#linear-gradient)"/>
+  <rect id="Rectangle_566-3" data-name="Rectangle 566" width="9.014" height="20.282" transform="translate(22.535 15.775)" fill="url(#linear-gradient)"/>
+  <rect id="Rectangle_566-4" data-name="Rectangle 566" width="9.014" height="27.042" transform="translate(33.803 9.014)" fill="url(#linear-gradient)"/>
+  <rect id="Rectangle_566-5" data-name="Rectangle 566" width="9.014" height="22.535" transform="translate(45.07 13.521)" fill="url(#linear-gradient)"/>
+  <rect id="Rectangle_566-6" data-name="Rectangle 566" width="9.014" height="36.056" transform="translate(56.338)" fill="url(#linear-gradient)"/>
+  <rect id="Rectangle_566-7" data-name="Rectangle 566" width="9.014" height="22.535" transform="translate(67.605 13.521)" fill="url(#linear-gradient)"/>
+</svg>
