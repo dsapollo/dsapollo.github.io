@@ -1,0 +1,62 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/_breakpoints";
+//@import "~projects/shared-lib/src/lib/styles/store/variables.scss";
+
+ .system-error-page{
+  top:-50px;
+     width: 800px;
+  height: 500px;
+     display:flex;
+      align-items: center;
+    justify-content: center;
+     position: relative;
+    margin-top: 2rem;
+ }
+
+.system-error-bg{
+    width: 34vw;
+    height: 100%;
+     object-fit:contain;
+}
+
+.error-banner{
+     position:absolute;
+    width:350px;
+   left:50%;
+   
+     text-align: left;
+
+}
+
+.error-text{
+    &-sub-title {
+        font-size:1.625rem;
+        font-weight:bold;
+    }
+    &-body{
+        text-align: center;
+    }
+}
+
+@include media-breakpoint-down(lg){
+  
+
+    .error-banner{
+        width: 290px;
+        display: flex;
+        width: 50%;
+        flex-wrap: wrap;
+        .error-text{
+          &-sub-title{
+            font-size: 0.9rem;
+          }
+          &-body{
+            font-size: 0.8rem;
+          }
+        }
+        
+    
+
+      }
+    }

@@ -2,6 +2,9 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
 const mf = require("@angular-architects/module-federation/webpack");
 const path = require("path");
 const share = mf.share;
+const shareAll=mf.shareAll;
+const{remoteFileName} =require("../remote-file");
+console.log("webpack",remoteFileName)
 
 const sharedMappings = new mf.SharedMappings();
 sharedMappings.register(
@@ -32,7 +35,8 @@ module.exports = {
 
         // For remotes (please adjust)
         name: "order-management",
-        filename: "remoteEntry.js", 
+        // filename: "remoteEntry.js", 
+        filename: `${remoteFileName}`, 
         exposes: {
             './AppStoreLandingModule': 
             './projects/order-management/src/app/module/internal/modules/app-store-landing/app-store-landing-modules.ts',

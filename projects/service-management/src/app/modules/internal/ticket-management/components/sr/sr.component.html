@@ -2,15 +2,22 @@
     <app-breadcrumbs [pages]="breadcrumbs"></app-breadcrumbs>
     <!-- <app-breadcrumbs[pages]="breadcrumbs"></app-breadcrumbs> -->
     <div class="page-header conatiner">
-      <div  class="right-content">
-        <button id="raise-sr-btn" class="btn btn-primary px-4 edit-btn" title="Raise New Ticket">
+     
+        <!-- <button id="raise-sr-btn" class="btn btn-primary px-4 edit-btn" title="Raise New Ticket">
             <span class="d-none d-sm-block fw-bold">Raise New Ticket</span>
-        </button>
+        </button> -->
+        <div class="col  d-flex justify-content-end align-items-start">
+          <button class="btn btn-primary" type="button ">
+            Create Sr Request
+          </button>
       </div>
     </div>
     <div class="conatiner fluid" id="main-body">
   </div>
-  <app-searchbox placeholder="Search By Id or Name"></app-searchbox>
+  <app-searchbox class="mt-2" placeholder="Search By Id or Name " >
+
+    <app-filter-button class="d-none d-lg-block"></app-filter-button>
+  </app-searchbox>
    
     <ng-template #containerHeader>
        
@@ -19,7 +26,7 @@
             
         </ng-container>
 
-        <ng-container *ngIf="activeSrTab ===2 && isAdmin">
+        <ng-container *ngIf="activeSrTab ===2 ">
           <div class="Search-container">
             <div class="d-flex align-items-center">
               <label class="me-2">Scheduler</label>

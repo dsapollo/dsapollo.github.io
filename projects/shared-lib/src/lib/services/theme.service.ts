@@ -19,11 +19,11 @@ export class ThemeService {
 
     },
     [Lobs.USER]:{
-      theme:'theme-User',
+      theme:'theme-USER',
     },
   };
 
-  currentTheme:string='theme-User';
+  currentTheme:string='theme-USER';
   private renderer:Renderer2;
 
   constructor(

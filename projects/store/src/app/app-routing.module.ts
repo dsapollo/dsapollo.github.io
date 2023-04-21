@@ -26,7 +26,7 @@ const routes: Routes = [
       loadChildren: () =>
         loadRemoteModule({
           type: 'module',
-          remoteEntry: "http://localhost:4400/remoteEntry.js",
+          remoteEntry: environment.serviceManagementRemoteUrl,
           exposedModule: './ServiceManagementModule',
         }).then((m) => m.ServiceManagementModule),
 
@@ -37,7 +37,7 @@ const routes: Routes = [
       loadChildren: () =>
         loadRemoteModule({
           type: 'module',
-          remoteEntry: "http://localhost:4300/remoteEntry.js",
+          remoteEntry: environment.OrderManagementRemoteUrl,
           exposedModule: './AppStoreLandingModule',
         }).then((m) => m.AppStoreLandingModule),
         

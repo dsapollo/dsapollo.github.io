@@ -1,0 +1,148 @@
+@import "~projects/shared-lib/src/lib/styles/store/variables.scss";
+@import "~projects/shared-lib/src/lib/styles/theme.scss";
+
+:host {
+  @include themed {
+    ngb-datepicker {
+      border: none;
+      border-bottom: 1px solid #dfdfdf;
+    }
+
+    .date-selection {
+      display: flex;
+      flex-direction: column;
+
+      .day-calendar {
+        position: relative;
+        span {
+          color: $primary;
+          position: absolute;
+          top: 1.188rem;
+          left: 0.438rem;
+          font-size: 0.7rem;
+        }
+      }
+    }
+    .cancel-apt-btn {
+      box-shadow: none;
+      &.disabled {
+        background-color: $gray-2;
+        border: 1px solid $gray-1;
+        color: $text-color !important;
+      }
+    }
+
+    .custom-day {
+      text-align: center;
+      padding: 0.185rem 0.25rem;
+      display: inline-block;
+      height: 2rem;
+      width: 2rem;
+    }
+    .custom-day.focused {
+      background-color: #e6e6e6;
+    }
+    .custom-day.range,
+    .custom-day:hover {
+      background-color: rgb(2, 117, 216);
+      color: white;
+    }
+    .custom-day.faded {
+      background-color: rgba(2, 117, 216, 0.5);
+    }
+
+    .custom-day.range {
+      position: relative;
+      background: initial;
+      color: initial;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 255%;
+        height: 150%;
+        background: transparent;
+        left: -21px;
+        top: -11px;
+        // border-radius: 50%;
+        border: 2px solid $gray-1;
+        border-left: none;
+        border-right: none;
+      }
+
+      &.start::after {
+        border-left: 2px solid $gray-1;
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+      }
+
+      &.end::after {
+        border-right: 2px solid $gray-1;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+      }
+    }
+
+    .nav-1 {
+      display: flex;
+      align-items: center;
+      .custom-icon {
+        width: 2.5rem;
+        cursor: initial !important;
+      }
+      .icon-img {
+        cursor: pointer;
+      }
+
+      .show-date {
+        color: $primary;
+        font-weight: bold;
+        margin-left: 1rem;
+        font-size: 1.5rem;
+        flex: 1;
+      }
+    }
+
+    .schedule-range-picker {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 0.75rem;
+      .btn {
+        box-shadow: none;
+        padding-top: 0.7rem;
+        padding-bottom: 0.6rem;
+
+        background: $gray-3;
+        border: none;
+
+        &:nth-of-type(1) {
+          border-top-left-radius: 1.25rem;
+          border-bottom-left-radius: 1.25rem;
+        }
+        &:nth-of-type(3) {
+          border-top-right-radius: 1.25rem;
+          border-bottom-right-radius: 1.25rem;
+        }
+      }
+      .btn-check:checked + .btn-outline-primary,
+      .btn-check:active + .btn-outline-primary,
+      .btn-outline-primary:active,
+      .btn-outline-primary.active,
+      .btn-outline-primary.dropdown-toggle.show {
+        color: #ffffff;
+        background-color: $primary;
+        border-color: $primary;
+      }
+
+      .btn:hover {
+        background: $gray-3;
+        color: inherit;
+      }
+    }
+
+    .month-appointment-right {
+      text-align: right;
+    }
+}
+}

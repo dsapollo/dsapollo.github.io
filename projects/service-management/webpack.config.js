@@ -33,10 +33,11 @@ module.exports = {
 
       // For remotes (please adjust)
       name: "service-management",
-      filename: "remoteEntry.js",
+      // filename: "remoteEntry.js",
+      filename:`${remoteFileName}`,
       exposes: {
         "./ServiceManagementModule":
-          "projects/service-management/src/app/modules/internal/service-management/service-management-module",
+          "projects/service-management/src/app/modules/internal/service-management/service-management-module.ts",
       },
 
       // For hosts (please adjust)

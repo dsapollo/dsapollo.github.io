@@ -1,0 +1,29 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/_breakpoints";
+@import "~projects/shared-lib/src/lib/styles/store/variables.scss";
+
+.offcanvas {
+  top: $header-height;
+}
+
+.disabled {
+  .selected {
+    box-shadow: none;
+    border: 1px solid;
+    font-weight: normal;
+    transform: scale(1);
+  }
+}
+
+// @include media-breakpoint-down(lg) {
+//   .offcanvas {
+//     top: $header-md-height;
+//   }
+// }
+
+@include media-breakpoint-down(sm) {
+  .offcanvas {
+    width: 100%;
+  }
+}

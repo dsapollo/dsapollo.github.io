@@ -1,5 +1,13 @@
-<nav class="navbar navbar-expand-lg navbar-primary bg-white border-bottom-1-store-navbar">
-  <div class="conatiner-fluid">
+<ng-container *ngIf="{
+  user:loggedInUser$
+} as data">
+
+<app-side-nav #fslNav direction="right" width="30rem">
+
+
+</app-side-nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom-1 store-navbar">
+  <div class="container-fluid">
     <img
       id="logo"
       src="assets/img/store.jpg"
@@ -18,7 +26,7 @@
     </ng-template>
   </div>
   <div
-    class="collapse navbar-collapse justify-content-end aligin-items-center"
+    class="navbar-right justify-content-end align-items-center dashboard-tooltip"
     id="navbarSupportContent"
   >
     <!-- <form class="d-flex">
@@ -154,6 +162,7 @@
     </ul>
   </div>
 </div>
+</ng-container>
 
 <ng-template #disabledCartMessageContent>
   <div>

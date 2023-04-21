@@ -2,10 +2,11 @@
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/mixins/_breakpoints";
 @import "~projects/shared-lib/src/lib/styles/store/variables.scss";
+// @import "~projects/shared-lib/src/lib/styles/store/styles.scss";
 
 .nav-tabs{
     position: sticky;
-    top: 8.125rem;
+    top: 8.125rem ;
     width:100%;
     background: white;
     z-index:2;

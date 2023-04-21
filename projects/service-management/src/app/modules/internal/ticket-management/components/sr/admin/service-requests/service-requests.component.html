@@ -1,19 +1,19 @@
-<div class="page-conatiner">
+<div class="page-container">
     <div>
-        <div class="page-conatiner-body">
-            <div class="page-tab-conatiner landing-page-tab">
+        <div class="page-container-body">
+            <div class="page-tab-container landing-page-tab">
                 <div class="sr-tab-dropdown">
                     <div class="tab-title">
                         {{tabTitle}}
                     </div>
                     <div>
-                        <slect class="form-select" id="active-tab-dropdown" [(ngModel)]="activeSRPage"
+                        <select class="form-select" id="active-tab-dropdown" [(ngModel)]="activeSRPage"
                         (ngModelChange)="onChange($event)">
                         <option *ngFor="let item of activeTabs" [value]="item.id">
                             {{item.value}}
                         </option>
                     
-                    </slect>
+                    </select>
                     </div>
                 </div>
 
@@ -53,7 +53,7 @@
                     </ng-template>
                 </li>        
             </ul>
-            <div [ngbNavOutlet]="nav" class="mt-2"></div>
+            <div [ngbNavOutlet]="nav" class="mt-"></div>
 
             </div>
         </div>

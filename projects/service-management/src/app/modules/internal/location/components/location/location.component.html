@@ -1,1 +1,106 @@
-<p>location works!</p>
+<div class="page-nav">
+  <app-breadcrumbs [pages]="breadcrumbs"></app-breadcrumbs>
+  <div class="page-header container">
+    <div class="col d-flex justify-content-end align-items-start">
+      <button class="btn btn-primary" type="button " (click)="createLocation()">
+        Create Location
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container fluid" id="main-body">
+  <app-searchbox class="mt-2" placeholder="Search By Id or Name ">
+    <app-filter-button class="d-none d-lg-block"></app-filter-button>
+  </app-searchbox>
+
+  <div *ngIf="location.length > 0; else noData">
+  <p class="fs-7 m-0">
+    Location(<span class="fw-bold">{{ count }}</span
+    >)
+  </p>
+  <div class="col d-flex justify-content-end align-items-start">
+  <button
+    class="filter-element p-2"
+    type="button"
+    id="configure-column-btn"
+    data-bs-toggle="dropdown"
+    ds-bs-auto-close="outside"
+    aria-expanded="false"
+  
+  >
+    <span class="fs-7">Configure Column</span>
+  </button>
+
+  <ul class="dropdown-menu" aria-labelledby="configure-column-btn">
+    <li *ngFor="let location of configureLocationColumn">
+      <input
+        class="form-check-input mx-2"
+        [ngClass]="{ disabled: location.defaultVisible }"
+        type="checkbox"
+        value=""
+        id="{{location.id}}"
+        [checked]="location.checked"
+        (change)="onCheckboxClick($event,location.id)"
+      />
+      <label class="form-check-label" for="{{ location.id }}">
+        {{ location.value }}
+      </label>
+    </li>
+  </ul>
+</div>
+
+<div class="container">
+ 
+    <div class="table-responsive" >
+      <table class="table-1 table table-bordered table-light text-center mt-1">
+        <thead>
+          <tr class="table-primary">
+            <th>Actions</th>
+           <ng-container *ngFor="let column of configureLocationColumn">
+            <th *ngIf="column.checked">{{column.value}}</th>
+           </ng-container>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <div class="seperated mt-1"></div>
+        <tbody>
+          <tr *ngFor="let loc of location">
+            <td>
+              <i class="fa-sharp fa-solid fa-pen-to-square"></i>
+              <i class="far fa-file-word mx-1" (click)="viewlocation(loc.id)"></i>
+            </td>
+
+            <td *ngIf="!(configureLocationColumn[0].checked ==false && configureLocationColumn[0].id =='locName')">{{ loc.location| emptySpace}}</td>
+           
+            <td *ngIf="!(configureLocationColumn[1].checked ==false && configureLocationColumn[1].id =='locStatus')">{{ loc.locationstatus | emptySpace}}</td>
+           
+            <td *ngIf="!(configureLocationColumn[2].checked ==false && configureLocationColumn[2].id =='city')">{{ loc.citytown | emptySpace }}</td>
+
+            <td *ngIf="!(configureLocationColumn[3].checked ==false && configureLocationColumn[3].id =='address')">{{ loc.address | emptySpace}}</td>
+
+            <td *ngIf="!(configureLocationColumn[4].checked ==false && configureLocationColumn[4].id =='scheduler')">{{ loc.scheduler | emptySpace}}</td>
+            
+            <td *ngIf="!(configureLocationColumn[5].checked ==false && configureLocationColumn[5].id =='tester')">{{ loc.tester | emptySpace}}</td>
+
+            <td *ngIf="!(configureLocationColumn[6].checked ==false && configureLocationColumn[6].id =='country')">{{ loc.country | emptySpace}}</td>
+
+            <td *ngIf="!(configureLocationColumn[7].checked ==false && configureLocationColumn[7].id =='loccode')">{{loc.postcode}}</td>
+            <!-- <td *ngIf="!(configureLocationColumn[8].checked ==false && configureLocationColumn[8].id =='postcode')">{{ loc.postcode | emptySpace}}</td> -->
+           
+            <td>
+                <i class="fa fa-trash" aria-hidden="true"></i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #noData>
+<app-no-data-found></app-no-data-found>
+</ng-template>

@@ -1,0 +1,60 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/_breakpoints";
+@import "~projects/shared-lib/src/lib/styles/store/variables.scss";
+
+
+
+.sr-tab-dropdown{
+    display:table-cell ;
+}
+
+a{
+    color:white;
+    text-decoration: underline;
+}
+
+
+
+.nav-tabs{
+    position: sticky;
+    top:8.125rem;
+    width: 100%;
+    background-color: white;
+    z-index: 1;
+
+}
+
+.sr-tab-list{
+    background-color: white;
+    
+}
+
+@include media-breakpoint-down(lg){
+    .sr-tab-list{
+        display: none;
+        // justify-content:space-between;
+    }
+
+.sr-tab-dropdown{
+    display: flex ;
+    align-items: end;
+    justify-content: right;
+    position: sticky;
+    top:8.375rem;
+    background: white;
+    z-index:1;
+
+    .form-select{
+        min-width: 12.5rem;
+    }
+}
+}
+
+@include media-breakpoint-down(md){
+    .sr-tab-dropdown{
+        top: 7.375rem;
+    }
+}
+
+

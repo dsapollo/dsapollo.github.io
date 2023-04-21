@@ -1,0 +1,53 @@
+<div
+  class="offcanvas offcanvas-end"
+  tabindex="-1"
+  id="page-filter"
+  #offcanvasElement
+  aria-labelledby="Page Filter"
+>
+  <div class="offcanvas-header">
+    <i
+      class="fas fa-times fs-6 cursor-pointer"
+      aria-hidden="true"
+      data-bs-dismiss="offcanvas"
+      aria-label="close"
+    ></i>
+    <div>
+      <button
+        class="btn btn-sm btn-primary padding-btn me-2"
+        type="button"
+        data-bs-dismiss="offcanvas"
+        aria-label="Close"
+        (click)="handleApply()"
+      >
+        Apply
+      </button>
+    </div>
+  </div>
+  <div class="offcanvas-body">
+    <ng-content select="[filtercontent]"></ng-content>
+
+    <div class="filter-content mt-3" *ngFor="let item of data">
+      <ng-container *ngIf="!item.hidden">
+        <h4 class="fs-7 mb-3 fw-bold">
+          {{ item.text }}:
+          <span class="text-primary ms-2">{{ item.subText || "" }}</span>
+        </h4>
+        <div
+          class="d-flex flex-wrap g-2"
+          [ngClass]="{ disabled: !!item.disabled }"
+        >
+          <div class="d-inline-block" *ngFor="let option of item.values">
+            <button
+              class="btn btn-filter"
+              [ngClass]="{ selected: isSelected(option, filter[item.key]) }"
+              (click)="toggleSelection(option, item.key)"
+            >
+              {{ option.value }}
+            </button>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>

@@ -14,11 +14,11 @@ const routes:Routes=[
         component:LocationComponent
     },
     {
-        path:'create',
+        path:'createlocation',
         component:CreatelocationComponent
     },
     {
-        path:'viewlocation',
+        path:'viewlocation/:locationId',
         component:LocationDetailComponent
     }
 ];

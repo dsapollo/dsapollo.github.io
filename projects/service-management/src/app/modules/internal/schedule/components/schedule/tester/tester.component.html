@@ -1,0 +1,68 @@
+<div class="page-nav">
+    <app-breadcrumbs [pages]="breadcrumbs"></app-breadcrumbs>
+    <div class="page-header container">
+
+    </div>
+</div>
+
+
+
+<div class="container fluid workload-page" id="main-body" (scroll)="onContainerScroll($event)">
+
+    <ng-template #testerWorkloadHeaderContent>
+        <div class="row">
+            <div class="col-5 date-selection">
+                <div class="date-header">
+                    <div class="nav-1">
+                        <span class="day-calendar">
+                            <img src="assets/img/icons/calendar.png"
+                            class="icon-img custom-icon"/>
+                            <span *ngIf="appCaledarType ==='day'">{{currentDay}}</span>
+                        </span>
+                        <span class="show-date">{{currentDate}}</span>
+                        <div class="arrow-nav">
+                            <img (click)="showPrevious()"
+                            src="assets/img/icons/arrow-left.png"
+                            id="select-prev-month"
+                            class="icon-img"/>
+
+                            <img (click)="showNext()"
+                            src="assets/img/icons/arrow-right.png"
+                            id="select-prev-month"
+                            class="ms-4 mb-3"/>
+                        </div>
+                    </div>
+                    <div class="mt-4 mb-3">
+                        <div class="btn-group schedule-range-picker"
+                        role="group"
+                        aria-label="Basic radio toggle button group">
+
+                        <input type="radio" class="btn-check" name="schedule-range-picker" id="day-schedule" autocomplete="off" (ngModelChange)="handleChangeInSchedule($event)"
+                        value="day"
+                        [(ngModel)]="appCaledarType"/>
+                        <label class="btn btn-outline-primary" for="day-schedule">
+                            Day
+                        </label>
+                    </div>
+                </div>
+                  
+            </div>
+            
+        </div>
+  
+</div>
+    </ng-template>
+
+
+    <ng-container *ngIf="appCaledarType !== 'month'">
+        <ng-container
+          *ngTemplateOutlet="testerWorkloadHeaderContent"
+        ></ng-container>
+      </ng-container>
+    
+      <app-month-appointnment *ngIf="appCaledarType === 'month'" #monthWorkload>
+      
+        <ng-container
+          *ngTemplateOutlet="testerWorkloadHeaderContent"
+        ></ng-container>
+    </app-month-appointnment>

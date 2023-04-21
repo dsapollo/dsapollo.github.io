@@ -1,5 +1,13 @@
 <div class="loader" 
 *ngIf="isLoading">
 
-<img *ngIf="themeService.currentTheme ==='theme-User'" src="assets/img/loader.gif" alt="loader"/>
+
+<img *ngIf="themeService.currentTheme ==='theme-ADMIN';else themeDefault"
+src="assets/img/loadernnn.gif" alt="loader"
+/>
+
+
+<ng-template #themeDefault>
+<img *ngIf="themeService.currentTheme ==='theme-USER'" src="assets/img/loader.gif" alt="loader"/>
+</ng-template>
 </div>

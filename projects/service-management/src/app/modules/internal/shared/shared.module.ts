@@ -15,6 +15,9 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { HorizontalScrollComponent } from "./componenets/horizontal-scroll/horizontal-scroll.component";
 import { LoaderComponent } from "./componenets/loader/loader.component";
 import { SearchboxComponent } from "./componenets/searchbox/searchbox.component";
+import { FilterButtonComponent } from "./componenets/filter-button/filter-button.component";
+import { FilterComponent } from "./componenets/filter/filter.component";
+import { NoDataFoundComponent } from "./componenets/error/no-data-found/no-data-found.component";
 
 
 
@@ -33,7 +36,10 @@ declarations:[
     DateFormatPipe,
     HorizontalScrollComponent,
     LoaderComponent,
-    SearchboxComponent
+    SearchboxComponent,
+    FilterButtonComponent,
+    FilterComponent,
+    NoDataFoundComponent
 
 ],
 exports:[
@@ -47,7 +53,10 @@ exports:[
     DateFormatPipe,
     HorizontalScrollComponent,
     LoaderComponent,
-    SearchboxComponent
+    SearchboxComponent,
+    FilterButtonComponent,
+    FilterComponent,
+    NoDataFoundComponent
 
 ],
 imports:[

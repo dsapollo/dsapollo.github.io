@@ -11,23 +11,23 @@ margin: 0;
 padding: 0;
 }
 
-.theme-bt *:not(.far):not(.fas):not(.fa),
+.theme-USER *:not(.far):not(.fas):not(.fa),
 .theme-default *:not(.far):not(.fas):not(.fa) {
 font-family: "BT Curve", Arial, Helvetica, sans-serif;
 }
 
-.theme-openreach *:not(.far):not(.fas):not(.fa) {
-font-family: "Openreach", Arial, Helvetica, sans-serif;
+.theme-ADMIN *:not(.far):not(.fas):not(.fa) {
+font-family: "ADMIN", Arial, Helvetica, sans-serif;
 }
 
-.theme-bt,
+.theme-USER,
 .theme-default {
 .landing-page-wrapper .p-carousel-prev-icon {
 filter: hue-rotate(71deg);
 }
 }
 
-.theme-openreach {
+.theme-ADMIN {
 .home-page-container {
 .app-img-container {
 .app-img {
@@ -95,8 +95,8 @@ min-width: auto;
 }
 }
 
-.esitest-wrapper,
-.score-navbar {
+.service-wrapper,
+.store-navbar {
 button {
 padding-top: 0.8rem !important;
 padding-bottom: 0.8rem !important;
@@ -1047,7 +1047,7 @@ padding-top: 10px !important;
 #page-filter.offcanvas {
 top: 62px;
 }
-.esitest-wrapper button.filter-element {
+.service-wrapper button.filter-element {
 padding: 6px 6px 7px 7px !important;
 }
 }

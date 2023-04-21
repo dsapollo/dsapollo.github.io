@@ -1,12 +1,16 @@
 import { NgModule } from '@angular/core';
 import { ToastrModule } from 'ngx-toastr';
 import { SharedLibComponent } from './shared-lib.component';
+import { ConnectionErrorModal } from './components/modals/connection-error/connection-error.component';
+import { RemainingHeightDirective } from './directives/remaining-height.directive';
 
 
 
 @NgModule({
   declarations: [
     SharedLibComponent,
+    ConnectionErrorModal,
+    RemainingHeightDirective
   ],
   imports: [
     ToastrModule.forRoot({
@@ -21,7 +25,7 @@ import { SharedLibComponent } from './shared-lib.component';
     }),
   ],
   exports: [
-    SharedLibComponent,
+    SharedLibComponent,ConnectionErrorModal
   ]
 })
 export class SharedLibModule { }

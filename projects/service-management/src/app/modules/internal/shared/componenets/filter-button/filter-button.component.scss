@@ -1,0 +1,18 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/_breakpoints";
+@import "~projects/shared-lib/src/lib/styles/store/variables.scss";
+
+.filter-element {
+  display: flex;
+  align-items: center;
+  background-color: $white;
+  border-radius: 0.313rem;
+  border: 1px solid $border-color-1;
+  padding: 0.5rem 0.33rem 0.3rem 0.33rem !important;
+  cursor: pointer;
+
+  .icon {
+    color: $gray-2;
+  }
+}

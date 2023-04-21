@@ -10,3 +10,22 @@
     background: white;
     z-index:1;
 }
+
+a:not([href]):not([class]), a:not([href]):not([class]):hover {
+    color: black;
+    text-decoration: none;
+}
+
+a {
+    color:aqua;
+    text-decoration: underline;
+}
+
+// .page-tab-container {
+// .nav-tabs .nav-link{
+//     border-bottom: 3px solid;
+//     color: #5514b4;
+//     font-weight: bold;
+//     padding: 6rem;
+// }
+// }

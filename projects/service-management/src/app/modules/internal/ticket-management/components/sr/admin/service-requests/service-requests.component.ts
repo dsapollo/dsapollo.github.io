@@ -39,14 +39,15 @@ export class ServiceRequestsComponent implements OnInit {
     },
     {
       id:3,
-      value:'Create Task',
-      countKey:'createTaskSRTotalCount',
-    },
-    {
-      id:4,
       value:'In Progress',
       countKey:'inProgressSRTotalCount',
     },
+    {
+      id:4,
+      value:'Create Task',
+      countKey:'createTaskSRTotalCount',
+    },
+   
     {
       id:5,
       value:'Closed SR',
@@ -77,17 +78,19 @@ export class ServiceRequestsComponent implements OnInit {
   getSRData(){
     if (this.activeSRPage ===1) this.srAdminState.getAllSRTaskList();
     else if (this.activeSRPage ===2) this.srAdminState.getNewSRTaskList();
-    else if (this.activeSRPage ===3) this.srAdminState.getCreateTaskList();
-    else if (this.activeSRPage ===4)
+    else if (this.activeSRPage ===3)
     this.srAdminState.getInProgressSRTaskList();
+    else if (this.activeSRPage ===4) this.srAdminState.getCreateTaskList();
+   
     else if(this.activeSRPage ===5) this.srAdminState.getclosedSRTaskList();
   }
 
   getServiceRequestData(){
     this.srAdminState.getAllSRTaskList(true);
-    this.srAdminState.getCreateTaskList(true);
-    this.srAdminState.getInProgressSRTaskList(true);
     this.srAdminState.getNewSRTaskList(true);
+    this.srAdminState.getInProgressSRTaskList(true);
+    this.srAdminState.getCreateTaskList(true);
+    
     this.srAdminState.getclosedSRTaskList(true);
   }
 }
